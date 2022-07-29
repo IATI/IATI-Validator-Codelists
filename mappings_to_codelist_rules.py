@@ -2,8 +2,15 @@ import os
 import json
 from lxml import etree as ET
 
+def find_equivalent_mapping_element(mapping, rule_mappings):
+    path = mapping.find('path').text
+    for rule_mapping in rule_mappings.getroot().xpath('//mapping'):
+        rule_map_path = mapping.find('path').text
+        if rule_map_path == path:
+            return rule_mapping
 
-def mapping_to_codelist_rules(mappings):
+
+def mapping_to_codelist_rules(mappings, rule_mappings):
     data = dict()
     for mapping in mappings.getroot().xpath('//mapping'):
         path_ref = mapping.find('path').text.split('/@')
@@ -72,7 +79,8 @@ def mapping_to_codelist_rules(mappings):
             out[path][attribute]["allowedCodes"] = allowedCodes
 
         # add validation rules
-        validation_rules = mapping.find('validation-rules')
+        rule_mapping = find_equivalent_mapping_element(mapping, rule_mappings)
+        validation_rules = rule_mapping.find('validation-rules')
         if validation_rules is not None:
             for validation_rule in validation_rules:
                 for child in validation_rule:
@@ -87,7 +95,8 @@ def mapping_to_codelist_rules(mappings):
     return data
 
 
+rule_mappings = ET.parse('rule_mapping.xml')
 mappings = ET.parse('IATI-Codelists/mapping.xml')
 with open('codelist_rules.json', 'w') as fp:
-    data = mapping_to_codelist_rules(mappings)
-    json.dump(data, fp)
+    data = mapping_to_codelist_rules(mappings, rule_mappings)
+    json.dump(data, fp, indent=2)
