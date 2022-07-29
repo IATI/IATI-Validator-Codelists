@@ -22,12 +22,16 @@
   "/iati-activities/iati-activity": {
     "budget-not-provided": {
       "codelist": "BudgetNotProvided",
-      "allowedCodes": ["1", "2", "3"],
-      "priority": "9.2",
+      "allowedCodes": [
+        "1",
+        "2",
+        "3"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "financial",
-      "id": "9.2.1",
-      "message": "The code to indicate why no budget is provided is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     },
     "default-currency": {
       "codelist": "Currency",
@@ -209,64 +213,91 @@
         "ZMW",
         "ZWL"
       ],
-      "priority": "9.3",
+      "priority": "9.1",
       "severity": "error",
-      "category": "financial",
-      "id": "9.3.1",
-      "message": "The default currency code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/activity-date": {
     "type": {
       "codelist": "ActivityDateType",
-      "allowedCodes": ["1", "2", "3", "4"],
-      "priority": "9.4",
+      "allowedCodes": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "information",
-      "id": "9.4.1",
-      "message": "The activity date type is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/activity-status": {
     "code": {
       "codelist": "ActivityStatus",
-      "allowedCodes": ["1", "2", "3", "4", "5", "6"],
-      "priority": "9.5",
+      "allowedCodes": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "information",
-      "id": "9.5.1",
-      "message": "The activity status code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/activity-scope": {
     "code": {
       "codelist": "ActivityScope",
-      "allowedCodes": ["1", "2", "3", "4", "5", "6", "7", "8"],
-      "priority": "9.6",
+      "allowedCodes": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "information",
-      "id": "9.6.1",
-      "message": "The activity scope code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/budget": {
     "status": {
       "codelist": "BudgetStatus",
-      "allowedCodes": ["1", "2"],
-      "priority": "9.7",
+      "allowedCodes": [
+        "1",
+        "2"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "financial",
-      "id": "9.7.1",
-      "message": "The budget status is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     },
     "type": {
       "codelist": "BudgetType",
-      "allowedCodes": ["1", "2"],
-      "priority": "9.8",
+      "allowedCodes": [
+        "1",
+        "2"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "financial",
-      "id": "9.8.1",
-      "message": "The budget type is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/budget/value": {
@@ -450,237 +481,78 @@
         "ZMW",
         "ZWL"
       ],
-      "priority": "9.9",
+      "priority": "9.1",
       "severity": "error",
-      "category": "financial",
-      "id": "9.9.1",
-      "message": "The currency code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/collaboration-type": {
     "code": {
       "codelist": "CollaborationType",
-      "allowedCodes": ["1", "2", "3", "4", "6", "7", "8"],
-      "priority": "9.10",
+      "allowedCodes": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "6",
+        "7",
+        "8"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "classifications",
-      "id": "9.10.1",
-      "message": "The collaboration type is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/conditions/condition": {
     "type": {
       "codelist": "ConditionType",
-      "allowedCodes": ["1", "2", "3"],
-      "priority": "9.11",
+      "allowedCodes": [
+        "1",
+        "2",
+        "3"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "performance",
-      "id": "9.11.1",
-      "message": "The condition type is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/contact-info": {
     "type": {
       "codelist": "ContactType",
-      "allowedCodes": ["1", "2", "3", "4"],
-      "priority": "9.12",
+      "allowedCodes": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "information",
-      "id": "9.12.1",
-      "message": "The contact information type is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/country-budget-items": {
     "vocabulary": {
       "codelist": "BudgetIdentifierVocabulary",
-      "allowedCodes": ["1", "2", "3", "4", "5"],
-      "priority": "9.13",
+      "allowedCodes": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "classifications",
-      "id": "9.13.1",
-      "message": "The country budget identifier vocabulary is invalid."
-    }
-  },
-  "/iati-activities/iati-activity/country-budget-items/budget-item": {
-    "code": {
-      "conditions": {
-        "mapping": {
-          "1": {
-            "codelist": "BudgetIdentifier",
-            "allowedCodes": [
-              "1.1.1",
-              "1.2.1",
-              "1.3.1",
-              "1.3.2",
-              "1.3.3",
-              "1.3.4",
-              "1.3.5",
-              "1.3.6",
-              "1.3.7",
-              "1.3.8",
-              "1.3.9",
-              "1.3.10",
-              "1.3.11",
-              "1.3.12",
-              "1.3.13",
-              "1.4.1",
-              "1.4.2",
-              "1.4.3",
-              "1.5.1",
-              "1.6.1",
-              "1.7.1",
-              "1.7.2",
-              "1.7.3",
-              "1.7.4",
-              "1.8.1",
-              "2.1.1",
-              "2.1.2",
-              "2.1.3",
-              "2.1.4",
-              "2.1.5",
-              "2.1.6",
-              "2.1.7",
-              "2.1.8",
-              "2.1.9",
-              "2.1.10",
-              "2.2.1",
-              "2.2.2",
-              "2.2.3",
-              "2.2.4",
-              "3.1.1",
-              "3.1.2",
-              "3.1.3",
-              "3.1.4",
-              "3.1.5",
-              "3.1.6",
-              "3.1.7",
-              "3.2.1",
-              "3.2.2",
-              "3.2.3",
-              "3.3.1",
-              "3.3.2",
-              "3.3.3",
-              "3.3.4",
-              "3.3.5",
-              "3.3.6",
-              "3.3.7",
-              "3.3.8",
-              "3.3.9",
-              "3.4.1",
-              "3.4.2",
-              "3.4.3",
-              "3.4.4",
-              "3.5.1",
-              "3.5.2",
-              "3.5.3",
-              "3.5.4",
-              "3.6.1",
-              "3.6.2",
-              "3.6.3",
-              "3.6.4",
-              "3.6.5",
-              "3.6.6",
-              "3.6.7",
-              "3.7.1",
-              "3.7.2",
-              "3.7.3",
-              "3.7.4",
-              "3.7.6",
-              "3.7.7",
-              "3.8.1",
-              "3.8.2",
-              "3.8.3",
-              "3.8.4",
-              "3.8.5",
-              "3.8.6",
-              "3.8.7",
-              "3.8.8",
-              "3.8.9",
-              "3.8.10",
-              "3.8.11",
-              "3.8.12",
-              "3.8.13",
-              "3.8.14",
-              "3.9.1",
-              "3.9.2",
-              "3.9.3",
-              "3.9.4",
-              "3.10.1",
-              "3.10.2",
-              "3.10.3",
-              "3.10.4",
-              "3.11.1",
-              "3.11.2",
-              "3.12.1",
-              "4.1.1",
-              "4.1.2",
-              "4.1.3",
-              "4.1.4",
-              "4.1.5",
-              "4.1.6",
-              "4.1.7",
-              "4.1.8",
-              "4.1.9",
-              "4.2.1",
-              "4.2.2",
-              "4.2.3",
-              "4.2.4",
-              "4.2.5",
-              "5.1.1",
-              "5.2.1",
-              "5.2.2",
-              "5.2.3",
-              "5.2.4",
-              "5.3.1",
-              "5.3.2",
-              "5.3.3",
-              "5.3.4",
-              "5.3.5",
-              "5.3.6",
-              "5.3.7",
-              "5.3.8",
-              "5.3.9",
-              "5.3.10",
-              "5.3.11",
-              "5.3.12",
-              "5.3.13",
-              "5.4.1",
-              "5.4.2",
-              "5.4.3",
-              "5.4.4",
-              "5.4.5",
-              "5.4.6",
-              "5.4.7",
-              "5.4.8",
-              "5.4.9",
-              "5.4.10",
-              "5.4.11",
-              "5.4.12",
-              "6.1.1",
-              "6.1.2",
-              "7.1.1",
-              "7.2.1"
-            ],
-            "priority": "9.14",
-            "severity": "error",
-            "category": "classifications",
-            "id": "9.14.1",
-            "message": "The country budget item identifier is invalid."
-          }
-        },
-        "linkedAttribute": "../@vocabulary"
-      }
-    }
-  },
-  "/iati-activities/iati-activity/country-budget-items/budget-item/description": {
-    "type": {
-      "codelist": "DescriptionType",
-      "allowedCodes": ["1", "2", "3", "4"],
-      "priority": "9.15",
-      "severity": "error",
-      "category": "classifications",
-      "id": "9.15.1",
-      "message": "The country budget item description type is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/crs-add/channel-code": {
@@ -1115,22 +987,27 @@
         "63010",
         "90000"
       ],
-      "priority": "9.16",
+      "priority": "9.1",
       "severity": "error",
-      "category": "classifications",
-      "id": "9.16.1",
-      "message": "The CRS channel code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/crs-add/other-flags": {
     "code": {
       "codelist": "CRSAddOtherFlags",
-      "allowedCodes": ["1", "2", "3", "4"],
-      "priority": "9.17",
+      "allowedCodes": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "classifications",
-      "id": "9.17.1",
-      "message": "The CRS other flag code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/crs-add/loan-status": {
@@ -1314,33 +1191,43 @@
         "ZMW",
         "ZWL"
       ],
-      "priority": "9.18",
+      "priority": "9.1",
       "severity": "error",
-      "category": "classifications",
-      "id": "9.18.1",
-      "message": "The currency code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/crs-add/loan-terms/repayment-plan": {
     "code": {
       "codelist": "LoanRepaymentPeriod",
-      "allowedCodes": ["1", "2", "4", "12"],
-      "priority": "9.19",
+      "allowedCodes": [
+        "1",
+        "2",
+        "4",
+        "12"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "classifications",
-      "id": "9.19.1",
-      "message": "The repayment plan code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/crs-add/loan-terms/repayment-type": {
     "code": {
       "codelist": "LoanRepaymentType",
-      "allowedCodes": ["1", "2", "3", "5"],
-      "priority": "9.20",
+      "allowedCodes": [
+        "1",
+        "2",
+        "3",
+        "5"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "classifications",
-      "id": "9.20.1",
-      "message": "The repayment type is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/default-aid-type": {
@@ -1374,29 +1261,37 @@
               "H04",
               "H05"
             ],
-            "priority": "9.21",
+            "priority": "9.1",
             "severity": "error",
-            "category": "classifications",
-            "id": "9.21.1",
-            "message": "The default aid type is invalid."
+            "category": "iati",
+            "id": "9.1.1",
+            "message": "The IATI version of the dataset is not a valid version number."
           },
           "2": {
             "codelist": "EarmarkingCategory",
-            "allowedCodes": ["1", "2", "3", "4"],
-            "priority": "9.127",
+            "allowedCodes": [
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "priority": "9.1",
             "severity": "error",
             "category": "iati",
-            "id": "9.127.1",
-            "message": "The earmarking category code is invalid."
+            "id": "9.1.1",
+            "message": "The IATI version of the dataset is not a valid version number."
           },
           "4": {
             "codelist": "CashandVoucherModalities",
-            "allowedCodes": ["1", "2"],
-            "priority": "9.128",
+            "allowedCodes": [
+              "1",
+              "2"
+            ],
+            "priority": "9.1",
             "severity": "error",
             "category": "iati",
-            "id": "9.128.1",
-            "message": "The cash and voucher modality code is invalid."
+            "id": "9.1.1",
+            "message": "The IATI version of the dataset is not a valid version number."
           }
         },
         "linkedAttribute": "vocabulary",
@@ -1405,12 +1300,17 @@
     },
     "vocabulary": {
       "codelist": "AidTypeVocabulary",
-      "allowedCodes": ["1", "2", "3", "4"],
-      "priority": "9.22",
+      "allowedCodes": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "classifications",
-      "id": "9.22.1",
-      "message": "The default aid type vocabulary is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/default-finance-type": {
@@ -1486,11 +1386,11 @@
         "912",
         "913"
       ],
-      "priority": "9.23",
+      "priority": "9.1",
       "severity": "error",
-      "category": "classifications",
-      "id": "9.23.1",
-      "message": "The default finance type is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/default-flow-type": {
@@ -1508,33 +1408,42 @@
         "40",
         "50"
       ],
-      "priority": "9.24",
+      "priority": "9.1",
       "severity": "error",
-      "category": "classifications",
-      "id": "9.24.1",
-      "message": "The default flow type is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/default-tied-status": {
     "code": {
       "codelist": "TiedStatus",
-      "allowedCodes": ["3", "4", "5"],
-      "priority": "9.25",
+      "allowedCodes": [
+        "3",
+        "4",
+        "5"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "classifications",
-      "id": "9.25.1",
-      "message": "The default tied aid status code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/description": {
     "type": {
       "codelist": "DescriptionType",
-      "allowedCodes": ["1", "2", "3", "4"],
-      "priority": "9.26",
+      "allowedCodes": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "information",
-      "id": "9.26.1",
-      "message": "The description type is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/document-link": {
@@ -3194,11 +3103,11 @@
         "video/vnd.vivo",
         "video/VP8"
       ],
-      "priority": "9.27",
+      "priority": "9.1",
       "severity": "error",
-      "category": "documents",
-      "id": "9.27.1",
-      "message": "The document format is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/document-link/category": {
@@ -3236,11 +3145,11 @@
         "B17",
         "B18"
       ],
-      "priority": "9.28",
+      "priority": "9.1",
       "severity": "error",
-      "category": "documents",
-      "id": "9.28.1",
-      "message": "The document category code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/document-link/language": {
@@ -3429,11 +3338,11 @@
         "zh",
         "zu"
       ],
-      "priority": "9.29",
+      "priority": "9.1",
       "severity": "error",
-      "category": "documents",
-      "id": "9.29.1",
-      "message": "The document language code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/fss/forecast": {
@@ -3617,42 +3526,56 @@
         "ZMW",
         "ZWL"
       ],
-      "priority": "9.30",
+      "priority": "9.1",
       "severity": "error",
-      "category": "financial",
-      "id": "9.30.1",
-      "message": "The currency code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/humanitarian-scope": {
     "type": {
       "codelist": "HumanitarianScopeType",
-      "allowedCodes": ["1", "2"],
-      "priority": "9.31",
+      "allowedCodes": [
+        "1",
+        "2"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "classifications",
-      "id": "9.31.1",
-      "message": "The humanitarian scope type is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     },
     "vocabulary": {
       "codelist": "HumanitarianScopeVocabulary",
-      "allowedCodes": ["1-2", "2-1", "99"],
-      "priority": "9.32",
+      "allowedCodes": [
+        "1-2",
+        "2-1",
+        "99"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "classifications",
-      "id": "9.32.1",
-      "message": "The humanitarian scope vocabulary is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/location/administrative": {
     "vocabulary": {
       "codelist": "GeographicVocabulary",
-      "allowedCodes": ["A1", "A2", "A3", "A4", "G1", "G2"],
-      "priority": "9.33",
+      "allowedCodes": [
+        "A1",
+        "A2",
+        "A3",
+        "A4",
+        "G1",
+        "G2"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "geo",
-      "id": "9.33.1",
-      "message": "The location's administrative vocabulary is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     },
     "code": {
       "conditions": {
@@ -3912,11 +3835,11 @@
               "ZM",
               "ZW"
             ],
-            "priority": "9.117",
+            "priority": "9.1",
             "severity": "error",
-            "category": "geo",
-            "id": "9.117.1",
-            "message": "The country code is invalid."
+            "category": "iati",
+            "id": "9.1.1",
+            "message": "The IATI version of the dataset is not a valid version number."
           }
         },
         "linkedAttribute": "vocabulary"
@@ -4610,66 +4533,91 @@
         "ZN",
         "ZOO"
       ],
-      "priority": "9.34",
+      "priority": "9.1",
       "severity": "error",
-      "category": "geo",
-      "id": "9.34.1",
-      "message": "The location feature designation type code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/location/location-class": {
     "code": {
       "codelist": "GeographicLocationClass",
-      "allowedCodes": ["1", "2", "3", "4"],
-      "priority": "9.35",
+      "allowedCodes": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "geo",
-      "id": "9.35.1",
-      "message": "The location class code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/location/location-id": {
     "vocabulary": {
       "codelist": "GeographicVocabulary",
-      "allowedCodes": ["A1", "A2", "A3", "A4", "G1", "G2"],
-      "priority": "9.36",
+      "allowedCodes": [
+        "A1",
+        "A2",
+        "A3",
+        "A4",
+        "G1",
+        "G2"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "geo",
-      "id": "9.36.1",
-      "message": "The location identifier vocabulary is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/location/location-reach": {
     "code": {
       "codelist": "GeographicLocationReach",
-      "allowedCodes": ["1", "2"],
-      "priority": "9.37",
+      "allowedCodes": [
+        "1",
+        "2"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "geo",
-      "id": "9.37.1",
-      "message": "The location reach code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/location/exactness": {
     "code": {
       "codelist": "GeographicExactness",
-      "allowedCodes": ["1", "2"],
-      "priority": "9.38",
+      "allowedCodes": [
+        "1",
+        "2"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "geo",
-      "id": "9.38.1",
-      "message": "The location exactness code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/other-identifier": {
     "type": {
       "codelist": "OtherIdentifierType",
-      "allowedCodes": ["A1", "A2", "A3", "A9", "B1", "B9"],
-      "priority": "9.39",
+      "allowedCodes": [
+        "A1",
+        "A2",
+        "A3",
+        "A9",
+        "B1",
+        "B9"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "identifiers",
-      "id": "9.39.1",
-      "message": "The other identifier type is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/participating-org": {
@@ -5104,20 +5052,25 @@
         "63010",
         "90000"
       ],
-      "priority": "9.40",
+      "priority": "9.1",
       "severity": "error",
-      "category": "participating",
-      "id": "9.40.1",
-      "message": "The CRS channel code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     },
     "role": {
       "codelist": "OrganisationRole",
-      "allowedCodes": ["1", "2", "3", "4"],
-      "priority": "9.41",
+      "allowedCodes": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "participating",
-      "id": "9.41.1",
-      "message": "The organisation role is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     },
     "type": {
       "codelist": "OrganisationType",
@@ -5139,22 +5092,25 @@
         "80",
         "90"
       ],
-      "priority": "9.42",
+      "priority": "9.1",
       "severity": "error",
-      "category": "participating",
-      "id": "9.42.1",
-      "message": "The organisation type is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/planned-disbursement": {
     "type": {
       "codelist": "BudgetType",
-      "allowedCodes": ["1", "2"],
-      "priority": "9.43",
+      "allowedCodes": [
+        "1",
+        "2"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "financial",
-      "id": "9.43.1",
-      "message": "The planned disbursement budget type is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/planned-disbursement/provider-org": {
@@ -5178,11 +5134,11 @@
         "80",
         "90"
       ],
-      "priority": "9.44",
+      "priority": "9.1",
       "severity": "error",
-      "category": "financial",
-      "id": "9.44.1",
-      "message": "The organisation type is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/planned-disbursement/receiver-org": {
@@ -5206,11 +5162,11 @@
         "80",
         "90"
       ],
-      "priority": "9.45",
+      "priority": "9.1",
       "severity": "error",
-      "category": "financial",
-      "id": "9.45.1",
-      "message": "The organisation type is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/planned-disbursement/value": {
@@ -5394,11 +5350,11 @@
         "ZMW",
         "ZWL"
       ],
-      "priority": "9.46",
+      "priority": "9.1",
       "severity": "error",
-      "category": "financial",
-      "id": "9.46.1",
-      "message": "The currency code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/policy-marker": {
@@ -5421,11 +5377,11 @@
               "11",
               "12"
             ],
-            "priority": "9.47",
+            "priority": "9.1",
             "severity": "error",
-            "category": "classifications",
-            "id": "9.47.1",
-            "message": "The policy marker code is invalid."
+            "category": "iati",
+            "id": "9.1.1",
+            "message": "The IATI version of the dataset is not a valid version number."
           }
         },
         "linkedAttribute": "vocabulary",
@@ -5434,21 +5390,30 @@
     },
     "significance": {
       "codelist": "PolicySignificance",
-      "allowedCodes": ["0", "1", "2", "3", "4"],
-      "priority": "9.48",
+      "allowedCodes": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "classifications",
-      "id": "9.48.1",
-      "message": "The policy marker significance is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     },
     "vocabulary": {
       "codelist": "PolicyMarkerVocabulary",
-      "allowedCodes": ["1", "99"],
-      "priority": "9.49",
+      "allowedCodes": [
+        "1",
+        "99"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "classifications",
-      "id": "9.49.1",
-      "message": "The policy marker vocabulary is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/recipient-country": {
@@ -5707,11 +5672,11 @@
         "ZM",
         "ZW"
       ],
-      "priority": "9.50",
+      "priority": "9.1",
       "severity": "error",
-      "category": "geo",
-      "id": "9.50.1",
-      "message": "The recipient country code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/recipient-region": {
@@ -5748,11 +5713,11 @@
               "1034",
               "1035"
             ],
-            "priority": "9.51",
+            "priority": "9.1",
             "severity": "error",
-            "category": "geo",
-            "id": "9.51.1",
-            "message": "The recipient region code is invalid."
+            "category": "iati",
+            "id": "9.1.1",
+            "message": "The IATI version of the dataset is not a valid version number."
           }
         },
         "linkedAttribute": "vocabulary",
@@ -5761,23 +5726,33 @@
     },
     "vocabulary": {
       "codelist": "RegionVocabulary",
-      "allowedCodes": ["1", "2", "99"],
-      "priority": "9.52",
+      "allowedCodes": [
+        "1",
+        "2",
+        "99"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "geo",
-      "id": "9.52.1",
-      "message": "The recipient region vocabulary is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/related-activity": {
     "type": {
       "codelist": "RelatedActivityType",
-      "allowedCodes": ["1", "2", "3", "4", "5"],
-      "priority": "9.53",
+      "allowedCodes": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "relations",
-      "id": "9.53.1",
-      "message": "The related activity type is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/reporting-org": {
@@ -5801,33 +5776,27 @@
         "80",
         "90"
       ],
-      "priority": "9.54",
+      "priority": "9.1",
       "severity": "error",
-      "category": "identifiers",
-      "id": "9.54.1",
-      "message": "The organisation type is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/result": {
     "type": {
       "codelist": "ResultType",
-      "allowedCodes": ["1", "2", "3", "9"],
-      "priority": "9.55",
+      "allowedCodes": [
+        "1",
+        "2",
+        "3",
+        "9"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "performance",
-      "id": "9.55.1",
-      "message": "The result type is invalid."
-    }
-  },
-  "/iati-activities/iati-activity/result/description": {
-    "type": {
-      "codelist": "DescriptionType",
-      "allowedCodes": ["1", "2", "3", "4"],
-      "priority": "9.56",
-      "severity": "error",
-      "category": "performance",
-      "id": "9.56.1",
-      "message": "The result description type is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/result/document-link": {
@@ -7487,11 +7456,11 @@
         "video/vnd.vivo",
         "video/VP8"
       ],
-      "priority": "9.57",
+      "priority": "9.1",
       "severity": "error",
-      "category": "performance",
-      "id": "9.57.1",
-      "message": "The document format is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/result/document-link/category": {
@@ -7529,11 +7498,11 @@
         "B17",
         "B18"
       ],
-      "priority": "9.58",
+      "priority": "9.1",
       "severity": "error",
-      "category": "performance",
-      "id": "9.58.1",
-      "message": "The document category code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/result/document-link/language": {
@@ -7722,22 +7691,28 @@
         "zh",
         "zu"
       ],
-      "priority": "9.59",
+      "priority": "9.1",
       "severity": "error",
-      "category": "performance",
-      "id": "9.59.1",
-      "message": "The language code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/result/indicator": {
     "measure": {
       "codelist": "IndicatorMeasure",
-      "allowedCodes": ["1", "2", "3", "4", "5"],
-      "priority": "9.60",
+      "allowedCodes": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "performance",
-      "id": "9.60.1",
-      "message": "The indicator measure is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/result/indicator/baseline/document-link": {
@@ -9397,11 +9372,11 @@
         "video/vnd.vivo",
         "video/VP8"
       ],
-      "priority": "9.61",
+      "priority": "9.1",
       "severity": "error",
-      "category": "performance",
-      "id": "9.61.1",
-      "message": "The document format is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/result/indicator/baseline/document-link/category": {
@@ -9439,11 +9414,11 @@
         "B17",
         "B18"
       ],
-      "priority": "9.62",
+      "priority": "9.1",
       "severity": "error",
-      "category": "performance",
-      "id": "9.62.1",
-      "message": "The document category code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/result/indicator/baseline/document-link/language": {
@@ -9632,22 +9607,11 @@
         "zh",
         "zu"
       ],
-      "priority": "9.63",
+      "priority": "9.1",
       "severity": "error",
-      "category": "performance",
-      "id": "9.63.1",
-      "message": "The language code is invalid."
-    }
-  },
-  "/iati-activities/iati-activity/result/indicator/description": {
-    "type": {
-      "codelist": "DescriptionType",
-      "allowedCodes": ["1", "2", "3", "4"],
-      "priority": "9.64",
-      "severity": "error",
-      "category": "performance",
-      "id": "9.64.1",
-      "message": "The indicator description type is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/result/indicator/document-link": {
@@ -11307,11 +11271,11 @@
         "video/vnd.vivo",
         "video/VP8"
       ],
-      "priority": "9.65",
+      "priority": "9.1",
       "severity": "error",
-      "category": "performance",
-      "id": "9.65.1",
-      "message": "The document format is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/result/indicator/document-link/category": {
@@ -11349,11 +11313,11 @@
         "B17",
         "B18"
       ],
-      "priority": "9.66",
+      "priority": "9.1",
       "severity": "error",
-      "category": "performance",
-      "id": "9.66.1",
-      "message": "The document category code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/result/indicator/document-link/language": {
@@ -11542,11 +11506,11 @@
         "zh",
         "zu"
       ],
-      "priority": "9.67",
+      "priority": "9.1",
       "severity": "error",
-      "category": "performance",
-      "id": "9.67.1",
-      "message": "The language code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/result/indicator/period/actual/document-link": {
@@ -13206,11 +13170,11 @@
         "video/vnd.vivo",
         "video/VP8"
       ],
-      "priority": "9.68",
+      "priority": "9.1",
       "severity": "error",
-      "category": "performance",
-      "id": "9.68.1",
-      "message": "The document format is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/result/indicator/period/actual/document-link/category": {
@@ -13248,11 +13212,11 @@
         "B17",
         "B18"
       ],
-      "priority": "9.69",
+      "priority": "9.1",
       "severity": "error",
-      "category": "performance",
-      "id": "9.69.1",
-      "message": "The document category code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/result/indicator/period/actual/document-link/language": {
@@ -13441,11 +13405,11 @@
         "zh",
         "zu"
       ],
-      "priority": "9.70",
+      "priority": "9.1",
       "severity": "error",
-      "category": "performance",
-      "id": "9.70.1",
-      "message": "The language code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/result/indicator/period/target/document-link": {
@@ -15105,11 +15069,11 @@
         "video/vnd.vivo",
         "video/VP8"
       ],
-      "priority": "9.71",
+      "priority": "9.1",
       "severity": "error",
-      "category": "performance",
-      "id": "9.71.1",
-      "message": "The document format is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/result/indicator/period/target/document-link/category": {
@@ -15147,11 +15111,11 @@
         "B17",
         "B18"
       ],
-      "priority": "9.72",
+      "priority": "9.1",
       "severity": "error",
-      "category": "performance",
-      "id": "9.72.1",
-      "message": "The document category code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/result/indicator/period/target/document-link/language": {
@@ -15340,33 +15304,46 @@
         "zh",
         "zu"
       ],
-      "priority": "9.73",
+      "priority": "9.1",
       "severity": "error",
-      "category": "performance",
-      "id": "9.73.1",
-      "message": "The language code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/result/indicator/reference": {
     "vocabulary": {
       "codelist": "IndicatorVocabulary",
-      "allowedCodes": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "99"],
-      "priority": "9.74",
+      "allowedCodes": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "99"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "performance",
-      "id": "9.74.1",
-      "message": "The indicator reference code vocabulary is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/result/reference": {
     "vocabulary": {
       "codelist": "ResultVocabulary",
-      "allowedCodes": ["99"],
-      "priority": "9.75",
+      "allowedCodes": [
+        "99"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "performance",
-      "id": "9.75.1",
-      "message": "The result reference code vocabulary is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/sector": {
@@ -15702,11 +15679,11 @@
               "99810",
               "99820"
             ],
-            "priority": "9.76",
+            "priority": "9.1",
             "severity": "error",
-            "category": "classifications",
-            "id": "9.76.1",
-            "message": "The OECD DAC sector is invalid."
+            "category": "iati",
+            "id": "9.1.1",
+            "message": "The IATI version of the dataset is not a valid version number."
           },
           "2": {
             "codelist": "SectorCategory",
@@ -15756,11 +15733,11 @@
               "930",
               "998"
             ],
-            "priority": "9.77",
+            "priority": "9.1",
             "severity": "error",
-            "category": "classifications",
-            "id": "9.77.1",
-            "message": "The OECD DAC category is invalid."
+            "category": "iati",
+            "id": "9.1.1",
+            "message": "The IATI version of the dataset is not a valid version number."
           },
           "7": {
             "codelist": "UNSDG-Goals",
@@ -15783,11 +15760,11 @@
               "16",
               "17"
             ],
-            "priority": "9.129",
+            "priority": "9.1",
             "severity": "error",
-            "category": "classifications",
-            "id": "9.129.1",
-            "message": "The UNSDG goal code is invalid."
+            "category": "iati",
+            "id": "9.1.1",
+            "message": "The IATI version of the dataset is not a valid version number."
           },
           "8": {
             "codelist": "UNSDG-Targets",
@@ -15962,11 +15939,11 @@
               "17.18",
               "17.19"
             ],
-            "priority": "9.130",
+            "priority": "9.1",
             "severity": "error",
-            "category": "classifications",
-            "id": "9.130.1",
-            "message": "The UNSDG target code is invalid."
+            "category": "iati",
+            "id": "9.1.1",
+            "message": "The IATI version of the dataset is not a valid version number."
           }
         },
         "linkedAttribute": "vocabulary",
@@ -15991,11 +15968,11 @@
         "99",
         "98"
       ],
-      "priority": "9.78",
+      "priority": "9.1",
       "severity": "error",
-      "category": "classifications",
-      "id": "9.78.1",
-      "message": "The sector vocabulary is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/tag": {
@@ -16023,11 +16000,11 @@
               "16",
               "17"
             ],
-            "priority": "9.125",
+            "priority": "9.1",
             "severity": "error",
             "category": "iati",
-            "id": "9.125.1",
-            "message": "The UNSDG goal code is invalid."
+            "id": "9.1.1",
+            "message": "The IATI version of the dataset is not a valid version number."
           },
           "3": {
             "codelist": "UNSDG-Targets",
@@ -16202,11 +16179,11 @@
               "17.18",
               "17.19"
             ],
-            "priority": "9.126",
+            "priority": "9.1",
             "severity": "error",
             "category": "iati",
-            "id": "9.126.1",
-            "message": "The UNSDG target code is invalid."
+            "id": "9.1.1",
+            "message": "The IATI version of the dataset is not a valid version number."
           }
         },
         "linkedAttribute": "vocabulary"
@@ -16214,12 +16191,17 @@
     },
     "vocabulary": {
       "codelist": "TagVocabulary",
-      "allowedCodes": ["1", "2", "3", "99"],
-      "priority": "9.79",
+      "allowedCodes": [
+        "1",
+        "2",
+        "3",
+        "99"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "classifications",
-      "id": "9.79.1",
-      "message": "The tag vocabulary is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/transaction/aid-type": {
@@ -16253,29 +16235,37 @@
               "H04",
               "H05"
             ],
-            "priority": "9.80",
+            "priority": "9.1",
             "severity": "error",
-            "category": "financial",
-            "id": "9.80.1",
-            "message": "The aid type is invalid."
+            "category": "iati",
+            "id": "9.1.1",
+            "message": "The IATI version of the dataset is not a valid version number."
           },
           "2": {
             "codelist": "EarmarkingCategory",
-            "allowedCodes": ["1", "2", "3", "4"],
-            "priority": "9.129",
+            "allowedCodes": [
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "priority": "9.1",
             "severity": "error",
-            "category": "financial",
-            "id": "9.129.1",
-            "message": "The aid type is invalid."
+            "category": "iati",
+            "id": "9.1.1",
+            "message": "The IATI version of the dataset is not a valid version number."
           },
           "4": {
             "codelist": "CashandVoucherModalities",
-            "allowedCodes": ["1", "2"],
-            "priority": "9.130",
+            "allowedCodes": [
+              "1",
+              "2"
+            ],
+            "priority": "9.1",
             "severity": "error",
-            "category": "financial",
-            "id": "9.130.1",
-            "message": "The aid type is invalid."
+            "category": "iati",
+            "id": "9.1.1",
+            "message": "The IATI version of the dataset is not a valid version number."
           }
         },
         "linkedAttribute": "vocabulary",
@@ -16284,23 +16274,33 @@
     },
     "vocabulary": {
       "codelist": "AidTypeVocabulary",
-      "allowedCodes": ["1", "2", "3", "4"],
-      "priority": "9.81",
+      "allowedCodes": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "financial",
-      "id": "9.81.1",
-      "message": "The aid type vocabulary is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/transaction/disbursement-channel": {
     "code": {
       "codelist": "DisbursementChannel",
-      "allowedCodes": ["1", "2", "3", "4"],
-      "priority": "9.82",
+      "allowedCodes": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "financial",
-      "id": "9.82.1",
-      "message": "The disbursement channel code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/transaction/finance-type": {
@@ -16376,11 +16376,11 @@
         "912",
         "913"
       ],
-      "priority": "9.83",
+      "priority": "9.1",
       "severity": "error",
-      "category": "financial",
-      "id": "9.83.1",
-      "message": "The finance type is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/transaction/flow-type": {
@@ -16398,11 +16398,11 @@
         "40",
         "50"
       ],
-      "priority": "9.84",
+      "priority": "9.1",
       "severity": "error",
-      "category": "financial",
-      "id": "9.84.1",
-      "message": "The flow type is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/transaction/recipient-country": {
@@ -16661,11 +16661,11 @@
         "ZM",
         "ZW"
       ],
-      "priority": "9.85",
+      "priority": "9.1",
       "severity": "error",
-      "category": "financial",
-      "id": "9.85.1",
-      "message": "The recipient country code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/transaction/recipient-region": {
@@ -16702,11 +16702,11 @@
               "1034",
               "1035"
             ],
-            "priority": "9.86",
+            "priority": "9.1",
             "severity": "error",
-            "category": "financial",
-            "id": "9.86.1",
-            "message": "The recipient region code is invalid."
+            "category": "iati",
+            "id": "9.1.1",
+            "message": "The IATI version of the dataset is not a valid version number."
           }
         },
         "linkedAttribute": "vocabulary",
@@ -16715,12 +16715,16 @@
     },
     "vocabulary": {
       "codelist": "RegionVocabulary",
-      "allowedCodes": ["1", "2", "99"],
-      "priority": "9.87",
+      "allowedCodes": [
+        "1",
+        "2",
+        "99"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "financial",
-      "id": "9.87.1",
-      "message": "The recipient region vocabulary is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/transaction/provider-org": {
@@ -16744,11 +16748,11 @@
         "80",
         "90"
       ],
-      "priority": "9.88",
+      "priority": "9.1",
       "severity": "error",
-      "category": "financial",
-      "id": "9.88.1",
-      "message": "The organisation type is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/transaction/receiver-org": {
@@ -16772,11 +16776,11 @@
         "80",
         "90"
       ],
-      "priority": "9.89",
+      "priority": "9.1",
       "severity": "error",
-      "category": "financial",
-      "id": "9.89.1",
-      "message": "The organisation type is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/transaction/sector": {
@@ -17112,11 +17116,11 @@
               "99810",
               "99820"
             ],
-            "priority": "9.90",
+            "priority": "9.1",
             "severity": "error",
-            "category": "financial",
-            "id": "9.90.1",
-            "message": "The OECD DAC sector is invalid."
+            "category": "iati",
+            "id": "9.1.1",
+            "message": "The IATI version of the dataset is not a valid version number."
           },
           "2": {
             "codelist": "SectorCategory",
@@ -17166,11 +17170,11 @@
               "930",
               "998"
             ],
-            "priority": "9.124",
+            "priority": "9.1",
             "severity": "error",
-            "category": "financial",
-            "id": "9.124.1",
-            "message": "The DAC3 sector code is invalid."
+            "category": "iati",
+            "id": "9.1.1",
+            "message": "The IATI version of the dataset is not a valid version number."
           },
           "7": {
             "codelist": "UNSDG-Goals",
@@ -17193,11 +17197,11 @@
               "16",
               "17"
             ],
-            "priority": "9.131",
+            "priority": "9.1",
             "severity": "error",
-            "category": "financial",
-            "id": "9.131.1",
-            "message": "The UNSDG goal code is invalid."
+            "category": "iati",
+            "id": "9.1.1",
+            "message": "The IATI version of the dataset is not a valid version number."
           },
           "8": {
             "codelist": "UNSDG-Targets",
@@ -17372,11 +17376,11 @@
               "17.18",
               "17.19"
             ],
-            "priority": "9.132",
+            "priority": "9.1",
             "severity": "error",
-            "category": "financial",
-            "id": "9.132.1",
-            "message": "The UNSDG target code is invalid."
+            "category": "iati",
+            "id": "9.1.1",
+            "message": "The IATI version of the dataset is not a valid version number."
           }
         },
         "linkedAttribute": "vocabulary",
@@ -17401,22 +17405,26 @@
         "99",
         "98"
       ],
-      "priority": "9.91",
+      "priority": "9.1",
       "severity": "error",
-      "category": "financial",
-      "id": "9.91.1",
-      "message": "The sector vocabulary is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/transaction/tied-status": {
     "code": {
       "codelist": "TiedStatus",
-      "allowedCodes": ["3", "4", "5"],
-      "priority": "9.92",
+      "allowedCodes": [
+        "3",
+        "4",
+        "5"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "financial",
-      "id": "9.92.1",
-      "message": "The tied status code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/transaction/transaction-type": {
@@ -17437,11 +17445,11 @@
         "12",
         "13"
       ],
-      "priority": "9.93",
+      "priority": "9.1",
       "severity": "error",
-      "category": "financial",
-      "id": "9.93.1",
-      "message": "The transaction type is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity/transaction/value": {
@@ -17625,11 +17633,11 @@
         "ZMW",
         "ZWL"
       ],
-      "priority": "9.94",
+      "priority": "9.1",
       "severity": "error",
-      "category": "financial",
-      "id": "9.94.1",
-      "message": "The currency code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/": {
@@ -17818,11 +17826,11 @@
         "zh",
         "zu"
       ],
-      "priority": "9.95",
+      "priority": "9.1",
       "severity": "error",
       "category": "iati",
-      "id": "9.95.1",
-      "message": "The language code is invalid."
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-organisations/iati-organisation": {
@@ -18006,11 +18014,11 @@
         "ZMW",
         "ZWL"
       ],
-      "priority": "9.96",
+      "priority": "9.1",
       "severity": "error",
-      "category": "organisation",
-      "id": "9.96.1",
-      "message": "The currency code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/organisations": {
@@ -18026,10 +18034,10 @@
         "2.02",
         "2.03"
       ],
-      "priority": "9.97",
+      "priority": "9.1",
       "severity": "error",
       "category": "iati",
-      "id": "9.97.1",
+      "id": "9.1.1",
       "message": "The IATI version of the dataset is not a valid version number."
     }
   },
@@ -19690,11 +19698,11 @@
         "video/vnd.vivo",
         "video/VP8"
       ],
-      "priority": "9.98",
+      "priority": "9.1",
       "severity": "error",
-      "category": "documents",
-      "id": "9.98.1",
-      "message": "The document format is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-organisations/iati-organisation/document-link/category": {
@@ -19732,11 +19740,11 @@
         "B17",
         "B18"
       ],
-      "priority": "9.99",
+      "priority": "9.1",
       "severity": "error",
-      "category": "documents",
-      "id": "9.99.1",
-      "message": "The document category code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-organisations/iati-organisation/document-link/language": {
@@ -19925,11 +19933,11 @@
         "zh",
         "zu"
       ],
-      "priority": "9.100",
+      "priority": "9.1",
       "severity": "error",
-      "category": "documents",
-      "id": "9.100.1",
-      "message": "The language code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-organisations/iati-organisation/document-link/recipient-country": {
@@ -20188,22 +20196,25 @@
         "ZM",
         "ZW"
       ],
-      "priority": "9.101",
+      "priority": "9.1",
       "severity": "error",
-      "category": "documents",
-      "id": "9.101.1",
-      "message": "The recipient country code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-organisations/iati-organisation/recipient-country-budget": {
     "status": {
       "codelist": "BudgetStatus",
-      "allowedCodes": ["1", "2"],
-      "priority": "9.102",
+      "allowedCodes": [
+        "1",
+        "2"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "financial",
-      "id": "9.102.1",
-      "message": "The budget status is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-organisations/iati-organisation/recipient-country-budget/recipient-country": {
@@ -20462,11 +20473,11 @@
         "ZM",
         "ZW"
       ],
-      "priority": "9.103",
+      "priority": "9.1",
       "severity": "error",
-      "category": "financial",
-      "id": "9.103.1",
-      "message": "The recipient country code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-organisations/iati-organisation/recipient-country-budget/budget-line/value": {
@@ -20650,11 +20661,11 @@
         "ZMW",
         "ZWL"
       ],
-      "priority": "9.122",
+      "priority": "9.1",
       "severity": "error",
-      "category": "financial",
-      "id": "9.122.1",
-      "message": "The currency code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-organisations/iati-organisation/recipient-country-budget/value": {
@@ -20838,22 +20849,25 @@
         "ZMW",
         "ZWL"
       ],
-      "priority": "9.104",
+      "priority": "9.1",
       "severity": "error",
-      "category": "financial",
-      "id": "9.104.1",
-      "message": "The currency code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-organisations/iati-organisation/recipient-org-budget": {
     "status": {
       "codelist": "BudgetStatus",
-      "allowedCodes": ["1", "2"],
-      "priority": "9.105",
+      "allowedCodes": [
+        "1",
+        "2"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "financial",
-      "id": "9.105.1",
-      "message": "The budget status is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-organisations/iati-organisation/recipient-org-budget/value": {
@@ -21037,11 +21051,11 @@
         "ZMW",
         "ZWL"
       ],
-      "priority": "9.106",
+      "priority": "9.1",
       "severity": "error",
-      "category": "financial",
-      "id": "9.106.1",
-      "message": "The currency code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-organisations/iati-organisation/recipient-org-budget/budget-line/value": {
@@ -21225,22 +21239,25 @@
         "ZMW",
         "ZWL"
       ],
-      "priority": "9.123",
+      "priority": "9.1",
       "severity": "error",
-      "category": "financial",
-      "id": "9.123.1",
-      "message": "The currency code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-organisations/iati-organisation/recipient-region-budget": {
     "status": {
       "codelist": "BudgetStatus",
-      "allowedCodes": ["1", "2"],
-      "priority": "9.107",
+      "allowedCodes": [
+        "1",
+        "2"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "financial",
-      "id": "9.107.1",
-      "message": "The budget status is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-organisations/iati-organisation/recipient-region-budget/recipient-region": {
@@ -21277,11 +21294,11 @@
               "1034",
               "1035"
             ],
-            "priority": "9.108",
+            "priority": "9.1",
             "severity": "error",
-            "category": "financial",
-            "id": "9.108.1",
-            "message": "The recipient region budget code is invalid."
+            "category": "iati",
+            "id": "9.1.1",
+            "message": "The IATI version of the dataset is not a valid version number."
           }
         },
         "linkedAttribute": "vocabulary",
@@ -21290,12 +21307,16 @@
     },
     "vocabulary": {
       "codelist": "RegionVocabulary",
-      "allowedCodes": ["1", "2", "99"],
-      "priority": "9.109",
+      "allowedCodes": [
+        "1",
+        "2",
+        "99"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "geo",
-      "id": "9.109.1",
-      "message": "The recipient region vocabulary is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-organisations/iati-organisation/recipient-region-budget/budget-line/value": {
@@ -21479,11 +21500,11 @@
         "ZMW",
         "ZWL"
       ],
-      "priority": "9.110",
+      "priority": "9.1",
       "severity": "error",
-      "category": "geo",
-      "id": "9.110.1",
-      "message": "The currency code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-organisations/iati-organisation/recipient-region-budget/value": {
@@ -21667,11 +21688,11 @@
         "ZMW",
         "ZWL"
       ],
-      "priority": "9.111",
+      "priority": "9.1",
       "severity": "error",
-      "category": "geo",
-      "id": "9.111.1",
-      "message": "The currency code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-organisations/iati-organisation/reporting-org": {
@@ -21695,22 +21716,25 @@
         "80",
         "90"
       ],
-      "priority": "9.112",
+      "priority": "9.1",
       "severity": "error",
-      "category": "information",
-      "id": "9.112.1",
-      "message": "The organisation type is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-organisations/iati-organisation/total-budget": {
     "status": {
       "codelist": "BudgetStatus",
-      "allowedCodes": ["1", "2"],
-      "priority": "9.113",
+      "allowedCodes": [
+        "1",
+        "2"
+      ],
+      "priority": "9.1",
       "severity": "error",
-      "category": "financial",
-      "id": "9.113.1",
-      "message": "The budget status is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-organisations/iati-organisation/total-budget/value": {
@@ -21894,11 +21918,11 @@
         "ZMW",
         "ZWL"
       ],
-      "priority": "9.114",
+      "priority": "9.1",
       "severity": "error",
-      "category": "financial",
-      "id": "9.114.1",
-      "message": "The currency code is invalid."
+      "category": "iati",
+      "id": "9.1.1",
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   }
 }
