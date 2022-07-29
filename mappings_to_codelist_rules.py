@@ -95,7 +95,7 @@ def mapping_to_codelist_rules(mappings, rule_mappings):
     return data
 
 
-rule_mappings = ET.parse('rule_mapping.xml')
+rule_mappings = ET.parse('rule_mappings.xml')
 mappings = ET.parse('IATI-Codelists/mapping.xml')
 with open('codelist_rules.json', 'w') as fp:
     data = mapping_to_codelist_rules(mappings, rule_mappings)
