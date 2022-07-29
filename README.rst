@@ -14,7 +14,7 @@ The source codelists can be found in the `IATI-Codelists/xml/` directory.
 Codelist Mapping Output
 ================
 
-`mapping.xml <https://github.com/IATI/IATI-Codelists/blob/version-2.02/mapping.xml>`__ relates codelists to an XML path in the standard. This should make it easier for users to work out which codelists go with which element and vice versa.
+`mapping.xml <https://github.com/IATI/IATI-Codelists/blob/version-2.01/mapping.xml>`__ relates codelists to an XML path in the standard. This should make it easier for users to work out which codelists go with which element and vice versa.
 
 This repository adds to the mapping the Codelist validation rule information used by the `IATI Validator <https://github.com/IATI/js-validator-api>`__.
 
@@ -57,7 +57,7 @@ It's structured as a list of `mapping` elements, which each have a `path` elemen
 Codelist Rules
 ================
 
-`codelist_rules.json <https://github.com/IATI/IATI-Validator-Codelists/blob/version-2.02/codelist_rules.json>`__ is the format of Codelist validation rules used by the `IATI Validator <https://github.com/IATI/js-validator-api>`__.
+`codelist_rules.json <https://github.com/IATI/IATI-Validator-Codelists/blob/version-2.01/codelist_rules.json>`__ is the format of Codelist validation rules used by the `IATI Validator <https://github.com/IATI/js-validator-api>`__.
 
 It combines information from `mapping.xml` and the different available Codelists. 
 

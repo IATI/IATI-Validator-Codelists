@@ -1,5 +1,5 @@
 [submodule "IATI-Codelists"]
 	path = IATI-Codelists
 	url = https://github.com/IATI/IATI-Codelists.git
-	branch = version-2.02
+	branch = version-2.01
 	ignore = dirty

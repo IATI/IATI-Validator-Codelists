@@ -60,18 +60,6 @@
     </validation-rules>
   </mapping>
   <mapping>
-    <path>//iati-activity/budget/@status</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.7</priority>
-        <severity>error</severity>
-        <category>financial</category>
-        <id>9.7.1</id>
-        <message>The budget status is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
     <path>//iati-activity/budget/@type</path>
     <validation-rules>
       <validation-rule>
@@ -152,18 +140,6 @@
         <category>classifications</category>
         <id>9.14.1</id>
         <message>The country budget item identifier is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-activity/crs-add/channel-code/text()</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.16</priority>
-        <severity>error</severity>
-        <category>classifications</category>
-        <id>9.16.1</id>
-        <message>The CRS channel code is invalid.</message>
       </validation-rule>
     </validation-rules>
   </mapping>
@@ -324,26 +300,14 @@
     </validation-rules>
   </mapping>
   <mapping>
-    <path>//iati-activity/humanitarian-scope/@type</path>
+    <path>//iati-activity/location/administrative/@code</path>
     <validation-rules>
       <validation-rule>
-        <priority>9.31</priority>
+        <priority>9.117</priority>
         <severity>error</severity>
-        <category>classifications</category>
-        <id>9.31.1</id>
-        <message>The humanitarian scope type is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-activity/humanitarian-scope/@vocabulary</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.32</priority>
-        <severity>error</severity>
-        <category>classifications</category>
-        <id>9.32.1</id>
-        <message>The humanitarian scope vocabulary is invalid.</message>
+        <category>geo</category>
+        <id>9.117.1</id>
+        <message>The country code is invalid.</message>
       </validation-rule>
     </validation-rules>
   </mapping>
@@ -356,18 +320,6 @@
         <category>geo</category>
         <id>9.33.1</id>
         <message>The location's administrative vocabulary is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-activity/location/administrative/@code</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.117</priority>
-        <severity>error</severity>
-        <category>geo</category>
-        <id>9.117.1</id>
-        <message>The country code is invalid.</message>
       </validation-rule>
     </validation-rules>
   </mapping>
@@ -476,30 +428,6 @@
         <category>financial</category>
         <id>9.43.1</id>
         <message>The planned disbursement budget type is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-activity/planned-disbursement/provider-org/@type</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.44</priority>
-        <severity>error</severity>
-        <category>financial</category>
-        <id>9.44.1</id>
-        <message>The organisation type is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-activity/planned-disbursement/receiver-org/@type</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.45</priority>
-        <severity>error</severity>
-        <category>financial</category>
-        <id>9.45.1</id>
-        <message>The organisation type is invalid.</message>
       </validation-rule>
     </validation-rules>
   </mapping>
@@ -632,18 +560,6 @@
         <category>performance</category>
         <id>9.60.1</id>
         <message>The indicator measure is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-activity/result/indicator/reference/@vocabulary</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.74</priority>
-        <severity>error</severity>
-        <category>performance</category>
-        <id>9.74.1</id>
-        <message>The indicator reference code vocabulary is invalid.</message>
       </validation-rule>
     </validation-rules>
   </mapping>
@@ -792,30 +708,6 @@
     </validation-rules>
   </mapping>
   <mapping>
-    <path>//iati-activity/transaction/provider-org/@type</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.88</priority>
-        <severity>error</severity>
-        <category>financial</category>
-        <id>9.88.1</id>
-        <message>The organisation type is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-activity/transaction/receiver-org/@type</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.89</priority>
-        <severity>error</severity>
-        <category>financial</category>
-        <id>9.89.1</id>
-        <message>The organisation type is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
     <path>//iati-activity/transaction/sector/@code</path>
     <validation-rules>
       <validation-rule>
@@ -924,6 +816,18 @@
     </validation-rules>
   </mapping>
   <mapping>
+    <path>//iati-organisations/@version</path>
+    <validation-rules>
+      <validation-rule>
+        <priority>9.97</priority>
+        <severity>error</severity>
+        <category>iati</category>
+        <id>9.97.1</id>
+        <message>The IATI version of the dataset is not a valid version number.</message>
+      </validation-rule>
+    </validation-rules>
+  </mapping>
+  <mapping>
     <path>//iati-organisation/@default-currency</path>
     <validation-rules>
       <validation-rule>
@@ -936,14 +840,38 @@
     </validation-rules>
   </mapping>
   <mapping>
-    <path>//iati-organisations/@version</path>
+    <path>//iati-organisation/reporting-org/@type</path>
     <validation-rules>
       <validation-rule>
-        <priority>9.97</priority>
+        <priority>9.112</priority>
         <severity>error</severity>
-        <category>iati</category>
-        <id>9.97.1</id>
-        <message>The IATI version of the dataset is not a valid version number.</message>
+        <category>information</category>
+        <id>9.112.1</id>
+        <message>The organisation type is invalid.</message>
+      </validation-rule>
+    </validation-rules>
+  </mapping>
+  <mapping>
+    <path>//iati-organisation/recipient-country-budget/budget-line/value/@currency</path>
+    <validation-rules>
+      <validation-rule>
+        <priority>9.122</priority>
+        <severity>error</severity>
+        <category>financial</category>
+        <id>9.122.1</id>
+        <message>The currency code is invalid.</message>
+      </validation-rule>
+    </validation-rules>
+  </mapping>
+  <mapping>
+    <path>//iati-organisation/recipient-country-budget/recipient-country/@code</path>
+    <validation-rules>
+      <validation-rule>
+        <priority>9.103</priority>
+        <severity>error</severity>
+        <category>financial</category>
+        <id>9.103.1</id>
+        <message>The recipient country code is invalid.</message>
       </validation-rule>
     </validation-rules>
   </mapping>
@@ -996,73 +924,13 @@
     </validation-rules>
   </mapping>
   <mapping>
-    <path>//iati-organisation/recipient-country-budget/@status</path>
+    <path>//iati-organisation/total-budget/value/@currency</path>
     <validation-rules>
       <validation-rule>
-        <priority>9.102</priority>
+        <priority>9.114</priority>
         <severity>error</severity>
         <category>financial</category>
-        <id>9.102.1</id>
-        <message>The budget status is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-organisation/recipient-country-budget/recipient-country/@code</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.103</priority>
-        <severity>error</severity>
-        <category>financial</category>
-        <id>9.103.1</id>
-        <message>The recipient country code is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-organisation/recipient-country-budget/budget-line/value/@currency</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.122</priority>
-        <severity>error</severity>
-        <category>financial</category>
-        <id>9.122.1</id>
-        <message>The currency code is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-organisation/recipient-country-budget/value/@currency</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.104</priority>
-        <severity>error</severity>
-        <category>financial</category>
-        <id>9.104.1</id>
-        <message>The currency code is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-organisation/recipient-org-budget/@status</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.105</priority>
-        <severity>error</severity>
-        <category>financial</category>
-        <id>9.105.1</id>
-        <message>The budget status is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-organisation/recipient-org-budget/value/@currency</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.106</priority>
-        <severity>error</severity>
-        <category>financial</category>
-        <id>9.106.1</id>
+        <id>9.114.1</id>
         <message>The currency code is invalid.</message>
       </validation-rule>
     </validation-rules>
@@ -1080,97 +948,25 @@
     </validation-rules>
   </mapping>
   <mapping>
-    <path>//iati-organisation/recipient-region-budget/@status</path>
+    <path>//iati-organisation/recipient-org-budget/value/@currency</path>
     <validation-rules>
       <validation-rule>
-        <priority>9.107</priority>
+        <priority>9.106</priority>
         <severity>error</severity>
         <category>financial</category>
-        <id>9.107.1</id>
-        <message>The budget status is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-organisation/recipient-region-budget/recipient-region/@vocabulary</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.109</priority>
-        <severity>error</severity>
-        <category>geo</category>
-        <id>9.109.1</id>
-        <message>The recipient region vocabulary is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-organisation/recipient-region-budget/budget-line/value/@currency</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.110</priority>
-        <severity>error</severity>
-        <category>geo</category>
-        <id>9.110.1</id>
+        <id>9.106.1</id>
         <message>The currency code is invalid.</message>
       </validation-rule>
     </validation-rules>
   </mapping>
   <mapping>
-    <path>//iati-organisation/recipient-region-budget/recipient-region/@code</path>
+    <path>//iati-organisation/recipient-country-budget/value/@currency</path>
     <validation-rules>
       <validation-rule>
-        <priority>9.108</priority>
+        <priority>9.104</priority>
         <severity>error</severity>
         <category>financial</category>
-        <id>9.108.1</id>
-        <message>The recipient region budget code is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-organisation/recipient-region-budget/value/@currency</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.111</priority>
-        <severity>error</severity>
-        <category>geo</category>
-        <id>9.111.1</id>
-        <message>The currency code is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-organisation/reporting-org/@type</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.112</priority>
-        <severity>error</severity>
-        <category>information</category>
-        <id>9.112.1</id>
-        <message>The organisation type is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-organisation/total-budget/@status</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.113</priority>
-        <severity>error</severity>
-        <category>financial</category>
-        <id>9.113.1</id>
-        <message>The budget status is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-organisation/total-budget/value/@currency</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.114</priority>
-        <severity>error</severity>
-        <category>financial</category>
-        <id>9.114.1</id>
+        <id>9.104.1</id>
         <message>The currency code is invalid.</message>
       </validation-rule>
     </validation-rules>

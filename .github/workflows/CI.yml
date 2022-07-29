@@ -6,21 +6,21 @@ name: CI
 env:
   DEV_DEFAULT_KEY: ${{ secrets.DEV_CACHER_DEFAULT_KEY }} # Azure Functions default API Key for Redis-cacher
   PROD_DEFAULT_KEY: ${{ secrets.PROD_CACHER_DEFAULT_KEY }} # Azure Functions default API Key for Redis-cacher
-  VERSION: 2.03
+  VERSION: 2.01
 
 on:
   push:
     paths-ignore:
       - "**/README.rst"
       - "**/dependabot.yml"
-    branches: [version-2.03]
+    branches: [version-2.01]
   pull_request:
     paths-ignore:
       - "**/README.rst"
       - "**/dependabot.yml"
-    branches: [version-2.03]
+    branches: [version-2.01]
 
-concurrency: CI-2.03
+concurrency: CI-2.01
 
 jobs:
   build:
