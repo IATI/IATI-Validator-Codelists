@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <mappings>
   <mapping>
     <path>//iati-activities/@version</path>
@@ -9,18 +8,6 @@
         <category>iati</category>
         <id>9.1.1</id>
         <message>The IATI version of the dataset is not a valid version number.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-activity/@budget-not-provided</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.2</priority>
-        <severity>error</severity>
-        <category>financial</category>
-        <id>9.2.1</id>
-        <message>The code to indicate why no budget is provided is invalid.</message>
       </validation-rule>
     </validation-rules>
   </mapping>
@@ -157,6 +144,18 @@
     </validation-rules>
   </mapping>
   <mapping>
+    <path>//iati-activity/country-budget-items/budget-item/@code</path>
+    <validation-rules>
+      <validation-rule>
+        <priority>9.14</priority>
+        <severity>error</severity>
+        <category>classifications</category>
+        <id>9.14.1</id>
+        <message>The country budget item identifier is invalid.</message>
+      </validation-rule>
+    </validation-rules>
+  </mapping>
+  <mapping>
     <path>//iati-activity/crs-add/channel-code/text()</path>
     <validation-rules>
       <validation-rule>
@@ -225,42 +224,6 @@
         <category>classifications</category>
         <id>9.21.1</id>
         <message>The default aid type is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-activity/default-aid-type/@code</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.127</priority>
-        <severity>error</severity>
-        <category>iati</category>
-        <id>9.127.1</id>
-        <message>The earmarking category code is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-activity/default-aid-type/@code</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.128</priority>
-        <severity>error</severity>
-        <category>iati</category>
-        <id>9.128.1</id>
-        <message>The cash and voucher modality code is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-activity/default-aid-type/@vocabulary</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.22</priority>
-        <severity>error</severity>
-        <category>classifications</category>
-        <id>9.22.1</id>
-        <message>The default aid type vocabulary is invalid.</message>
       </validation-rule>
     </validation-rules>
   </mapping>
@@ -481,18 +444,6 @@
     </validation-rules>
   </mapping>
   <mapping>
-    <path>//iati-activity/participating-org/@crs-channel-code</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.40</priority>
-        <severity>error</severity>
-        <category>participating</category>
-        <id>9.40.1</id>
-        <message>The CRS channel code is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
     <path>//iati-activity/participating-org/@role</path>
     <validation-rules>
       <validation-rule>
@@ -673,42 +624,6 @@
     </validation-rules>
   </mapping>
   <mapping>
-    <path>//iati-activity/result/document-link/@format</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.57</priority>
-        <severity>error</severity>
-        <category>performance</category>
-        <id>9.57.1</id>
-        <message>The document format is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-activity/result/document-link/category/@code</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.58</priority>
-        <severity>error</severity>
-        <category>performance</category>
-        <id>9.58.1</id>
-        <message>The document category code is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-activity/result/document-link/language/@code</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.59</priority>
-        <severity>error</severity>
-        <category>performance</category>
-        <id>9.59.1</id>
-        <message>The language code is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
     <path>//iati-activity/result/indicator/@measure</path>
     <validation-rules>
       <validation-rule>
@@ -721,150 +636,6 @@
     </validation-rules>
   </mapping>
   <mapping>
-    <path>//iati-activity/result/indicator/baseline/document-link/@format</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.61</priority>
-        <severity>error</severity>
-        <category>performance</category>
-        <id>9.61.1</id>
-        <message>The document format is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-activity/result/indicator/baseline/document-link/category/@code</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.62</priority>
-        <severity>error</severity>
-        <category>performance</category>
-        <id>9.62.1</id>
-        <message>The document category code is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-activity/result/indicator/baseline/document-link/language/@code</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.63</priority>
-        <severity>error</severity>
-        <category>performance</category>
-        <id>9.63.1</id>
-        <message>The language code is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-activity/result/indicator/document-link/@format</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.65</priority>
-        <severity>error</severity>
-        <category>performance</category>
-        <id>9.65.1</id>
-        <message>The document format is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-activity/result/indicator/document-link/category/@code</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.66</priority>
-        <severity>error</severity>
-        <category>performance</category>
-        <id>9.66.1</id>
-        <message>The document category code is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-activity/result/indicator/document-link/language/@code</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.67</priority>
-        <severity>error</severity>
-        <category>performance</category>
-        <id>9.67.1</id>
-        <message>The language code is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-activity/result/indicator/period/actual/document-link/@format</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.68</priority>
-        <severity>error</severity>
-        <category>performance</category>
-        <id>9.68.1</id>
-        <message>The document format is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-activity/result/indicator/period/actual/document-link/category/@code</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.69</priority>
-        <severity>error</severity>
-        <category>performance</category>
-        <id>9.69.1</id>
-        <message>The document category code is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-activity/result/indicator/period/actual/document-link/language/@code</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.70</priority>
-        <severity>error</severity>
-        <category>performance</category>
-        <id>9.70.1</id>
-        <message>The language code is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-activity/result/indicator/period/target/document-link/@format</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.71</priority>
-        <severity>error</severity>
-        <category>performance</category>
-        <id>9.71.1</id>
-        <message>The document format is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-activity/result/indicator/period/target/document-link/category/@code</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.72</priority>
-        <severity>error</severity>
-        <category>performance</category>
-        <id>9.72.1</id>
-        <message>The document category code is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-activity/result/indicator/period/target/document-link/language/@code</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.73</priority>
-        <severity>error</severity>
-        <category>performance</category>
-        <id>9.73.1</id>
-        <message>The language code is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
     <path>//iati-activity/result/indicator/reference/@vocabulary</path>
     <validation-rules>
       <validation-rule>
@@ -873,18 +644,6 @@
         <category>performance</category>
         <id>9.74.1</id>
         <message>The indicator reference code vocabulary is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-activity/result/reference/@vocabulary</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.75</priority>
-        <severity>error</severity>
-        <category>performance</category>
-        <id>9.75.1</id>
-        <message>The result reference code vocabulary is invalid.</message>
       </validation-rule>
     </validation-rules>
   </mapping>
@@ -949,42 +708,6 @@
     </validation-rules>
   </mapping>
   <mapping>
-    <path>//iati-activity/tag/@code</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.125</priority>
-        <severity>error</severity>
-        <category>iati</category>
-        <id>9.125.1</id>
-        <message>The UNSDG goal code is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-activity/tag/@code</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.126</priority>
-        <severity>error</severity>
-        <category>iati</category>
-        <id>9.126.1</id>
-        <message>The UNSDG target code is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-activity/tag/@vocabulary</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.79</priority>
-        <severity>error</severity>
-        <category>classifications</category>
-        <id>9.79.1</id>
-        <message>The tag vocabulary is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
     <path>//iati-activity/transaction/aid-type/@code</path>
     <validation-rules>
       <validation-rule>
@@ -993,42 +716,6 @@
         <category>financial</category>
         <id>9.80.1</id>
         <message>The aid type is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-activity/transaction/aid-type/@code</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.129</priority>
-        <severity>error</severity>
-        <category>financial</category>
-        <id>9.129.1</id>
-        <message>The aid type is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-activity/transaction/aid-type/@code</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.130</priority>
-        <severity>error</severity>
-        <category>financial</category>
-        <id>9.130.1</id>
-        <message>The aid type is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
-    <path>//iati-activity/transaction/aid-type/@vocabulary</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.81</priority>
-        <severity>error</severity>
-        <category>financial</category>
-        <id>9.81.1</id>
-        <message>The aid type vocabulary is invalid.</message>
       </validation-rule>
     </validation-rules>
   </mapping>
@@ -1405,18 +1092,6 @@
     </validation-rules>
   </mapping>
   <mapping>
-    <path>//iati-organisation/recipient-region-budget/recipient-region/@code</path>
-    <validation-rules>
-      <validation-rule>
-        <priority>9.108</priority>
-        <severity>error</severity>
-        <category>financial</category>
-        <id>9.108.1</id>
-        <message>The recipient region budget code is invalid.</message>
-      </validation-rule>
-    </validation-rules>
-  </mapping>
-  <mapping>
     <path>//iati-organisation/recipient-region-budget/recipient-region/@vocabulary</path>
     <validation-rules>
       <validation-rule>
@@ -1437,6 +1112,18 @@
         <category>geo</category>
         <id>9.110.1</id>
         <message>The currency code is invalid.</message>
+      </validation-rule>
+    </validation-rules>
+  </mapping>
+  <mapping>
+    <path>//iati-organisation/recipient-region-budget/recipient-region/@code</path>
+    <validation-rules>
+      <validation-rule>
+        <priority>9.108</priority>
+        <severity>error</severity>
+        <category>financial</category>
+        <id>9.108.1</id>
+        <message>The recipient region budget code is invalid.</message>
       </validation-rule>
     </validation-rules>
   </mapping>
