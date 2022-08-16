@@ -50,7 +50,7 @@ jobs:
   cache-codelist-rules-dev:
     needs: build
     runs-on: ubuntu-latest
-    if: github.event.action == 'update-202-dev'
+    if: github.event.action == 'update-202'
     steps:
       - uses: actions/checkout@v2
         with:
@@ -78,7 +78,7 @@ jobs:
   cache-codelist-rules-PROD:
     needs: cache-codelist-rules-dev
     runs-on: ubuntu-latest
-    if: github.event.action == 'update-202-dev'
+    if: github.event.action == 'update-202'
     steps:
       - uses: actions/checkout@v2
         with:
@@ -102,3 +102,14 @@ jobs:
             cat curl_out.txt
             exit 1
           fi
+
+  automerge:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: write
+    steps:
+      - uses: fastify/github-action-merge-dependabot@v3.2
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
