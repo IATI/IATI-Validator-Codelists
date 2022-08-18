@@ -19,6 +19,7 @@ on:
       - "**/README.rst"
       - "**/dependabot.yml"
     branches: [version-2.01]
+  repository_dispatch:
 
 concurrency: CI-2.01
 
@@ -51,7 +52,14 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     if: github.event.action == 'update-201'
+    env:
+      TRIGGER_REPO: ${{ github.event.client_payload.repo }}
+      TRIGGER_SHA: ${{ github.event.client_payload.SHA }}
     steps:
+      - name: 'Event Information'
+        run: |
+          echo "Event '${{ github.event.action }}' for $RESOURCE_NAME received from $TRIGGER_REPO and commit sha $TRIGGER_SHA"
+
       - uses: actions/checkout@v2
         with:
           # Number of commits to fetch. 0 indicates all history for all branches and tags.
@@ -79,7 +87,14 @@ jobs:
     needs: cache-codelist-rules-dev
     runs-on: ubuntu-latest
     if: github.event.action == 'update-201'
+    env:
+      TRIGGER_REPO: ${{ github.event.client_payload.repo }}
+      TRIGGER_SHA: ${{ github.event.client_payload.SHA }}
     steps:
+      - name: 'Event Information'
+        run: |
+          echo "Event '${{ github.event.action }}' for $RESOURCE_NAME received from $TRIGGER_REPO and commit sha $TRIGGER_SHA"
+
       - uses: actions/checkout@v2
         with:
           # Number of commits to fetch. 0 indicates all history for all branches and tags.
