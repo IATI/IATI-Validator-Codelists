@@ -4,9 +4,19 @@ from lxml import etree as ET
 
 def find_equivalent_mapping_element(mapping, rule_mappings):
     path = mapping.find('path').text
+    if (mapping.find('condition') is not None):
+        condition = mapping.find('condition').text
+    else:
+        condition = ""
+    name = mapping.find('codelist').attrib['ref']
     for rule_mapping in rule_mappings.getroot().xpath('//mapping'):
         rule_map_path = rule_mapping.find('path').text
-        if rule_map_path == path:
+        if (rule_mapping.find('condition') is not None):
+            rule_condition = rule_mapping.find('condition').text
+        else:
+            rule_condition = ""
+        rule_name = rule_mapping.find('codelist').attrib['ref']
+        if rule_map_path == path and rule_condition == condition and rule_name == name:
             return rule_mapping
     return None
 
