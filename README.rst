@@ -74,26 +74,6 @@ GitHub Actions workflows
 * Pushes ``codelist_rules.json`` to the Redis cache used by the IATI Validator
 * Triggers a workflow to update the .csv Validator rules in `Validator Rule Tracker <https://github.com/IATI/validator-rule-tracker>`__
 
-Testing Compliance Against Codelists
-===================================
-
-``testcodelists.py`` can be run against an IATI Activity XML to check that it is using the correct codelists values. Only codelists that are complete will be tested (see next section).
-
-Extra Metadata
-==============
-
-``complete`` - boolean that describes whether the codelist is 'complete' ie. having a value not on the codelist is definitely invalid. An example of an incomplete codelist is country codes, where extra codes may exist for disputed countries.
-
-Translation script
-==================
-
-``translations_csv_to_xml.py`` can be run to output XML codelists with translated elements, the expected format of the CSV files is that they must have ``code`` and ``name (<language iso code>)`` columns, and they can have ``description (<language iso code>)`` as well. The python script must be modified to include ``OUTPUTDIR``, ``PATH_TO_CSV``, ``PATH_TO_XML`` and ``LANG``. 
-
-Add metadata categories
-=======================
-
-``category_csv_to_xml.py`` can be run to output XML codelists with ``metadata/category`` elements, the expected format of the CSV files is that they must have ``Codelist``, ``Type_version <version number>`` and ``New Type`` columns. The python script must be modified to include the output directories, ``VERSION``, ``PATH_TO_XML`` and ``CSV_FILE``. 
-
 Information for developers
 ==========================
 
