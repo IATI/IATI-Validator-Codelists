@@ -90,10 +90,10 @@ def mapping_to_codelist_rules(mappings, rule_mappings):
                             out[path][attribute]["conditions"]["mapping"][linkValue][child.tag] = child.text
                         else:
                             out[path][attribute][child.tag] = child.text
-            if existingPath:
-                data[path][attribute] = out[path][attribute]
-            else:
-                data.update(out)
+        if existingPath:
+            data[path][attribute] = out[path][attribute]
+        else:
+            data.update(out)
     return data
 
 
