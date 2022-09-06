@@ -5,7 +5,7 @@ from lxml import etree as ET
 def find_equivalent_mapping_element(mapping, rule_mappings):
     path = mapping.find('path').text
     for rule_mapping in rule_mappings.getroot().xpath('//mapping'):
-        rule_map_path = mapping.find('path').text
+        rule_map_path = rule_mapping.find('path').text
         if rule_map_path == path:
             return rule_mapping
 
@@ -80,14 +80,15 @@ def mapping_to_codelist_rules(mappings, rule_mappings):
 
         # add validation rules
         rule_mapping = find_equivalent_mapping_element(mapping, rule_mappings)
-        validation_rules = rule_mapping.find('validation-rules')
-        if validation_rules is not None:
-            for validation_rule in validation_rules:
-                for child in validation_rule:
-                    if mapping.find('condition') is not None:
-                        out[path][attribute]["conditions"]["mapping"][linkValue][child.tag] = child.text
-                    else:
-                        out[path][attribute][child.tag] = child.text
+        if rule_mapping is not None:
+            validation_rules = rule_mapping.find('validation-rules')
+            if validation_rules is not None:
+                for validation_rule in validation_rules:
+                    for child in validation_rule:
+                        if mapping.find('condition') is not None:
+                            out[path][attribute]["conditions"]["mapping"][linkValue][child.tag] = child.text
+                        else:
+                            out[path][attribute][child.tag] = child.text
         if existingPath:
             data[path][attribute] = out[path][attribute]
         else:
