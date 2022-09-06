@@ -1275,11 +1275,11 @@
               "3",
               "4"
             ],
-            "priority": "9.21",
+            "priority": "9.127",
             "severity": "error",
-            "category": "classifications",
-            "id": "9.21.1",
-            "message": "The default aid type is invalid."
+            "category": "iati",
+            "id": "9.127.1",
+            "message": "The earmarking category code is invalid."
           },
           "4": {
             "codelist": "CashandVoucherModalities",
@@ -1287,11 +1287,11 @@
               "1",
               "2"
             ],
-            "priority": "9.21",
+            "priority": "9.128",
             "severity": "error",
-            "category": "classifications",
-            "id": "9.21.1",
-            "message": "The default aid type is invalid."
+            "category": "iati",
+            "id": "9.128.1",
+            "message": "The cash and voucher modality code is invalid."
           }
         },
         "linkedAttribute": "vocabulary",
@@ -15733,11 +15733,11 @@
               "930",
               "998"
             ],
-            "priority": "9.76",
+            "priority": "9.77",
             "severity": "error",
             "category": "classifications",
-            "id": "9.76.1",
-            "message": "The OECD DAC sector is invalid."
+            "id": "9.77.1",
+            "message": "The OECD DAC category is invalid."
           },
           "7": {
             "codelist": "UNSDG-Goals",
@@ -15760,11 +15760,11 @@
               "16",
               "17"
             ],
-            "priority": "9.76",
+            "priority": "9.129",
             "severity": "error",
             "category": "classifications",
-            "id": "9.76.1",
-            "message": "The OECD DAC sector is invalid."
+            "id": "9.129.1",
+            "message": "The UNSDG goal code is invalid."
           },
           "8": {
             "codelist": "UNSDG-Targets",
@@ -15939,11 +15939,11 @@
               "17.18",
               "17.19"
             ],
-            "priority": "9.76",
+            "priority": "9.130",
             "severity": "error",
             "category": "classifications",
-            "id": "9.76.1",
-            "message": "The OECD DAC sector is invalid."
+            "id": "9.130.1",
+            "message": "The UNSDG target code is invalid."
           }
         },
         "linkedAttribute": "vocabulary",
@@ -16179,11 +16179,11 @@
               "17.18",
               "17.19"
             ],
-            "priority": "9.125",
+            "priority": "9.126",
             "severity": "error",
             "category": "iati",
-            "id": "9.125.1",
-            "message": "The UNSDG goal code is invalid."
+            "id": "9.126.1",
+            "message": "The UNSDG target code is invalid."
           }
         },
         "linkedAttribute": "vocabulary"
@@ -16249,10 +16249,10 @@
               "3",
               "4"
             ],
-            "priority": "9.80",
+            "priority": "9.129",
             "severity": "error",
             "category": "financial",
-            "id": "9.80.1",
+            "id": "9.129.1",
             "message": "The aid type is invalid."
           },
           "4": {
@@ -16261,10 +16261,10 @@
               "1",
               "2"
             ],
-            "priority": "9.80",
+            "priority": "9.130",
             "severity": "error",
             "category": "financial",
-            "id": "9.80.1",
+            "id": "9.130.1",
             "message": "The aid type is invalid."
           }
         },
@@ -17170,11 +17170,11 @@
               "930",
               "998"
             ],
-            "priority": "9.90",
+            "priority": "9.124",
             "severity": "error",
             "category": "financial",
-            "id": "9.90.1",
-            "message": "The OECD DAC sector is invalid."
+            "id": "9.124.1",
+            "message": "The DAC3 sector code is invalid."
           },
           "7": {
             "codelist": "UNSDG-Goals",
@@ -17197,11 +17197,11 @@
               "16",
               "17"
             ],
-            "priority": "9.90",
+            "priority": "9.131",
             "severity": "error",
             "category": "financial",
-            "id": "9.90.1",
-            "message": "The OECD DAC sector is invalid."
+            "id": "9.131.1",
+            "message": "The UNSDG goal code is invalid."
           },
           "8": {
             "codelist": "UNSDG-Targets",
@@ -17376,11 +17376,11 @@
               "17.18",
               "17.19"
             ],
-            "priority": "9.90",
+            "priority": "9.132",
             "severity": "error",
             "category": "financial",
-            "id": "9.90.1",
-            "message": "The OECD DAC sector is invalid."
+            "id": "9.132.1",
+            "message": "The UNSDG target code is invalid."
           }
         },
         "linkedAttribute": "vocabulary",

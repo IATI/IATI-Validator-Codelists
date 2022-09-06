@@ -2,6 +2,7 @@
 <mappings>
   <mapping>
     <path>//iati-activities/@version</path>
+    <codelist ref="Version"/>
     <validation-rules>
       <validation-rule>
         <priority>9.1</priority>
@@ -14,6 +15,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/@budget-not-provided</path>
+    <codelist ref="BudgetNotProvided"/>
     <validation-rules>
       <validation-rule>
         <priority>9.2</priority>
@@ -26,6 +28,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/@default-currency</path>
+    <codelist ref="Currency"/>
     <validation-rules>
       <validation-rule>
         <priority>9.3</priority>
@@ -38,6 +41,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/activity-date/@type</path>
+    <codelist ref="ActivityDateType"/>
     <validation-rules>
       <validation-rule>
         <priority>9.4</priority>
@@ -50,6 +54,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/activity-status/@code</path>
+    <codelist ref="ActivityStatus"/>
     <validation-rules>
       <validation-rule>
         <priority>9.5</priority>
@@ -62,6 +67,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/activity-scope/@code</path>
+    <codelist ref="ActivityScope"/>
     <validation-rules>
       <validation-rule>
         <priority>9.6</priority>
@@ -74,6 +80,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/budget/@status</path>
+    <codelist ref="BudgetStatus"/>
     <validation-rules>
       <validation-rule>
         <priority>9.7</priority>
@@ -86,6 +93,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/budget/@type</path>
+    <codelist ref="BudgetType"/>
     <validation-rules>
       <validation-rule>
         <priority>9.8</priority>
@@ -98,6 +106,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/budget/value/@currency</path>
+    <codelist ref="Currency"/>
     <validation-rules>
       <validation-rule>
         <priority>9.9</priority>
@@ -110,6 +119,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/collaboration-type/@code</path>
+    <codelist ref="CollaborationType"/>
     <validation-rules>
       <validation-rule>
         <priority>9.10</priority>
@@ -122,6 +132,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/conditions/condition/@type</path>
+    <codelist ref="ConditionType"/>
     <validation-rules>
       <validation-rule>
         <priority>9.11</priority>
@@ -134,6 +145,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/contact-info/@type</path>
+    <codelist ref="ContactType"/>
     <validation-rules>
       <validation-rule>
         <priority>9.12</priority>
@@ -146,6 +158,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/country-budget-items/@vocabulary</path>
+    <codelist ref="BudgetIdentifierVocabulary"/>
     <validation-rules>
       <validation-rule>
         <priority>9.13</priority>
@@ -158,6 +171,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/crs-add/channel-code/text()</path>
+    <codelist ref="CRSChannelCode"/>
     <validation-rules>
       <validation-rule>
         <priority>9.16</priority>
@@ -170,6 +184,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/crs-add/other-flags/@code</path>
+    <codelist ref="CRSAddOtherFlags"/>
     <validation-rules>
       <validation-rule>
         <priority>9.17</priority>
@@ -182,6 +197,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/crs-add/loan-status/@currency</path>
+    <codelist ref="Currency"/>
     <validation-rules>
       <validation-rule>
         <priority>9.18</priority>
@@ -194,6 +210,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/crs-add/loan-terms/repayment-plan/@code</path>
+    <codelist ref="LoanRepaymentPeriod"/>
     <validation-rules>
       <validation-rule>
         <priority>9.19</priority>
@@ -206,6 +223,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/crs-add/loan-terms/repayment-type/@code</path>
+    <codelist ref="LoanRepaymentType"/>
     <validation-rules>
       <validation-rule>
         <priority>9.20</priority>
@@ -218,6 +236,8 @@
   </mapping>
   <mapping>
     <path>//iati-activity/default-aid-type/@code</path>
+    <codelist ref="AidType"/>
+    <condition>@vocabulary = '1' or not(@vocabulary)</condition>
     <validation-rules>
       <validation-rule>
         <priority>9.21</priority>
@@ -230,6 +250,8 @@
   </mapping>
   <mapping>
     <path>//iati-activity/default-aid-type/@code</path>
+    <codelist ref="EarmarkingCategory"/>
+    <condition>@vocabulary = '2'</condition>
     <validation-rules>
       <validation-rule>
         <priority>9.127</priority>
@@ -242,6 +264,8 @@
   </mapping>
   <mapping>
     <path>//iati-activity/default-aid-type/@code</path>
+    <codelist ref="CashandVoucherModalities"/>
+    <condition>@vocabulary = '4'</condition>
     <validation-rules>
       <validation-rule>
         <priority>9.128</priority>
@@ -254,6 +278,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/default-aid-type/@vocabulary</path>
+    <codelist ref="AidTypeVocabulary"/>
     <validation-rules>
       <validation-rule>
         <priority>9.22</priority>
@@ -266,6 +291,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/default-finance-type/@code</path>
+    <codelist ref="FinanceType"/>
     <validation-rules>
       <validation-rule>
         <priority>9.23</priority>
@@ -278,6 +304,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/default-flow-type/@code</path>
+    <codelist ref="FlowType"/>
     <validation-rules>
       <validation-rule>
         <priority>9.24</priority>
@@ -290,6 +317,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/default-tied-status/@code</path>
+    <codelist ref="TiedStatus"/>
     <validation-rules>
       <validation-rule>
         <priority>9.25</priority>
@@ -302,6 +330,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/description/@type</path>
+    <codelist ref="DescriptionType"/>
     <validation-rules>
       <validation-rule>
         <priority>9.26</priority>
@@ -314,6 +343,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/document-link/@format</path>
+    <codelist ref="FileFormat"/>
     <validation-rules>
       <validation-rule>
         <priority>9.27</priority>
@@ -326,6 +356,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/document-link/category/@code</path>
+    <codelist ref="DocumentCategory"/>
     <validation-rules>
       <validation-rule>
         <priority>9.28</priority>
@@ -338,6 +369,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/document-link/language/@code</path>
+    <codelist ref="Language"/>
     <validation-rules>
       <validation-rule>
         <priority>9.29</priority>
@@ -350,6 +382,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/fss/forecast/@currency</path>
+    <codelist ref="Currency"/>
     <validation-rules>
       <validation-rule>
         <priority>9.30</priority>
@@ -362,6 +395,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/humanitarian-scope/@type</path>
+    <codelist ref="HumanitarianScopeType"/>
     <validation-rules>
       <validation-rule>
         <priority>9.31</priority>
@@ -374,6 +408,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/humanitarian-scope/@vocabulary</path>
+    <codelist ref="HumanitarianScopeVocabulary"/>
     <validation-rules>
       <validation-rule>
         <priority>9.32</priority>
@@ -386,6 +421,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/location/administrative/@vocabulary</path>
+    <codelist ref="GeographicVocabulary"/>
     <validation-rules>
       <validation-rule>
         <priority>9.33</priority>
@@ -398,6 +434,8 @@
   </mapping>
   <mapping>
     <path>//iati-activity/location/administrative/@code</path>
+    <codelist ref="Country"/>
+    <condition>@vocabulary = 'A4'</condition>
     <validation-rules>
       <validation-rule>
         <priority>9.117</priority>
@@ -410,6 +448,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/location/feature-designation/@code</path>
+    <codelist ref="LocationType"/>
     <validation-rules>
       <validation-rule>
         <priority>9.34</priority>
@@ -422,6 +461,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/location/location-class/@code</path>
+    <codelist ref="GeographicLocationClass"/>
     <validation-rules>
       <validation-rule>
         <priority>9.35</priority>
@@ -434,6 +474,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/location/location-id/@vocabulary</path>
+    <codelist ref="GeographicVocabulary"/>
     <validation-rules>
       <validation-rule>
         <priority>9.36</priority>
@@ -446,6 +487,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/location/location-reach/@code</path>
+    <codelist ref="GeographicLocationReach"/>
     <validation-rules>
       <validation-rule>
         <priority>9.37</priority>
@@ -458,6 +500,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/location/exactness/@code</path>
+    <codelist ref="GeographicExactness"/>
     <validation-rules>
       <validation-rule>
         <priority>9.38</priority>
@@ -470,6 +513,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/other-identifier/@type</path>
+    <codelist ref="OtherIdentifierType"/>
     <validation-rules>
       <validation-rule>
         <priority>9.39</priority>
@@ -482,6 +526,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/participating-org/@crs-channel-code</path>
+    <codelist ref="CRSChannelCode"/>
     <validation-rules>
       <validation-rule>
         <priority>9.40</priority>
@@ -494,6 +539,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/participating-org/@role</path>
+    <codelist ref="OrganisationRole"/>
     <validation-rules>
       <validation-rule>
         <priority>9.41</priority>
@@ -506,6 +552,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/participating-org/@type</path>
+    <codelist ref="OrganisationType"/>
     <validation-rules>
       <validation-rule>
         <priority>9.42</priority>
@@ -518,6 +565,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/planned-disbursement/@type</path>
+    <codelist ref="BudgetType"/>
     <validation-rules>
       <validation-rule>
         <priority>9.43</priority>
@@ -530,6 +578,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/planned-disbursement/provider-org/@type</path>
+    <codelist ref="OrganisationType"/>
     <validation-rules>
       <validation-rule>
         <priority>9.44</priority>
@@ -542,6 +591,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/planned-disbursement/receiver-org/@type</path>
+    <codelist ref="OrganisationType"/>
     <validation-rules>
       <validation-rule>
         <priority>9.45</priority>
@@ -554,6 +604,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/planned-disbursement/value/@currency</path>
+    <codelist ref="Currency"/>
     <validation-rules>
       <validation-rule>
         <priority>9.46</priority>
@@ -566,6 +617,8 @@
   </mapping>
   <mapping>
     <path>//iati-activity/policy-marker/@code</path>
+    <codelist ref="PolicyMarker"/>
+    <condition>@vocabulary = '1' or not(@vocabulary)</condition>
     <validation-rules>
       <validation-rule>
         <priority>9.47</priority>
@@ -578,6 +631,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/policy-marker/@significance</path>
+    <codelist ref="PolicySignificance"/>
     <validation-rules>
       <validation-rule>
         <priority>9.48</priority>
@@ -590,6 +644,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/policy-marker/@vocabulary</path>
+    <codelist ref="PolicyMarkerVocabulary"/>
     <validation-rules>
       <validation-rule>
         <priority>9.49</priority>
@@ -602,6 +657,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/recipient-country/@code</path>
+    <codelist ref="Country"/>
     <validation-rules>
       <validation-rule>
         <priority>9.50</priority>
@@ -614,6 +670,8 @@
   </mapping>
   <mapping>
     <path>//iati-activity/recipient-region/@code</path>
+    <codelist ref="Region"/>
+    <condition>@vocabulary = '1' or not(@vocabulary)</condition>
     <validation-rules>
       <validation-rule>
         <priority>9.51</priority>
@@ -626,6 +684,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/recipient-region/@vocabulary</path>
+    <codelist ref="RegionVocabulary"/>
     <validation-rules>
       <validation-rule>
         <priority>9.52</priority>
@@ -638,6 +697,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/related-activity/@type</path>
+    <codelist ref="RelatedActivityType"/>
     <validation-rules>
       <validation-rule>
         <priority>9.53</priority>
@@ -650,6 +710,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/reporting-org/@type</path>
+    <codelist ref="OrganisationType"/>
     <validation-rules>
       <validation-rule>
         <priority>9.54</priority>
@@ -662,6 +723,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/result/@type</path>
+    <codelist ref="ResultType"/>
     <validation-rules>
       <validation-rule>
         <priority>9.55</priority>
@@ -674,6 +736,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/result/document-link/@format</path>
+    <codelist ref="FileFormat"/>
     <validation-rules>
       <validation-rule>
         <priority>9.57</priority>
@@ -686,6 +749,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/result/document-link/category/@code</path>
+    <codelist ref="DocumentCategory"/>
     <validation-rules>
       <validation-rule>
         <priority>9.58</priority>
@@ -698,6 +762,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/result/document-link/language/@code</path>
+    <codelist ref="Language"/>
     <validation-rules>
       <validation-rule>
         <priority>9.59</priority>
@@ -710,6 +775,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/result/indicator/@measure</path>
+    <codelist ref="IndicatorMeasure"/>
     <validation-rules>
       <validation-rule>
         <priority>9.60</priority>
@@ -722,6 +788,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/result/indicator/baseline/document-link/@format</path>
+    <codelist ref="FileFormat"/>
     <validation-rules>
       <validation-rule>
         <priority>9.61</priority>
@@ -734,6 +801,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/result/indicator/baseline/document-link/category/@code</path>
+    <codelist ref="DocumentCategory"/>
     <validation-rules>
       <validation-rule>
         <priority>9.62</priority>
@@ -746,6 +814,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/result/indicator/baseline/document-link/language/@code</path>
+    <codelist ref="Language"/>
     <validation-rules>
       <validation-rule>
         <priority>9.63</priority>
@@ -758,6 +827,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/result/indicator/document-link/@format</path>
+    <codelist ref="FileFormat"/>
     <validation-rules>
       <validation-rule>
         <priority>9.65</priority>
@@ -770,6 +840,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/result/indicator/document-link/category/@code</path>
+    <codelist ref="DocumentCategory"/>
     <validation-rules>
       <validation-rule>
         <priority>9.66</priority>
@@ -782,6 +853,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/result/indicator/document-link/language/@code</path>
+    <codelist ref="Language"/>
     <validation-rules>
       <validation-rule>
         <priority>9.67</priority>
@@ -794,6 +866,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/result/indicator/period/actual/document-link/@format</path>
+    <codelist ref="FileFormat"/>
     <validation-rules>
       <validation-rule>
         <priority>9.68</priority>
@@ -806,6 +879,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/result/indicator/period/actual/document-link/category/@code</path>
+    <codelist ref="DocumentCategory"/>
     <validation-rules>
       <validation-rule>
         <priority>9.69</priority>
@@ -818,6 +892,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/result/indicator/period/actual/document-link/language/@code</path>
+    <codelist ref="Language"/>
     <validation-rules>
       <validation-rule>
         <priority>9.70</priority>
@@ -830,6 +905,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/result/indicator/period/target/document-link/@format</path>
+    <codelist ref="FileFormat"/>
     <validation-rules>
       <validation-rule>
         <priority>9.71</priority>
@@ -842,6 +918,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/result/indicator/period/target/document-link/category/@code</path>
+    <codelist ref="DocumentCategory"/>
     <validation-rules>
       <validation-rule>
         <priority>9.72</priority>
@@ -854,6 +931,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/result/indicator/period/target/document-link/language/@code</path>
+    <codelist ref="Language"/>
     <validation-rules>
       <validation-rule>
         <priority>9.73</priority>
@@ -866,6 +944,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/result/indicator/reference/@vocabulary</path>
+    <codelist ref="IndicatorVocabulary"/>
     <validation-rules>
       <validation-rule>
         <priority>9.74</priority>
@@ -878,6 +957,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/result/reference/@vocabulary</path>
+    <codelist ref="ResultVocabulary"/>
     <validation-rules>
       <validation-rule>
         <priority>9.75</priority>
@@ -890,6 +970,8 @@
   </mapping>
   <mapping>
     <path>//iati-activity/sector/@code</path>
+    <codelist ref="Sector"/>
+    <condition>@vocabulary = '1' or not(@vocabulary)</condition>
     <validation-rules>
       <validation-rule>
         <priority>9.76</priority>
@@ -902,6 +984,8 @@
   </mapping>
   <mapping>
     <path>//iati-activity/sector/@code</path>
+    <codelist ref="SectorCategory"/>
+    <condition>@vocabulary = '2'</condition>
     <validation-rules>
       <validation-rule>
         <priority>9.77</priority>
@@ -914,6 +998,8 @@
   </mapping>
   <mapping>
     <path>//iati-activity/sector/@code</path>
+    <codelist ref="UNSDG-Goals" />
+    <condition>@vocabulary = '7'</condition>
     <validation-rules>
       <validation-rule>
         <priority>9.129</priority>
@@ -926,7 +1012,9 @@
   </mapping>
   <mapping>
       <path>//iati-activity/sector/@code</path>
-          <validation-rules>
+      <codelist ref="UNSDG-Targets" />
+      <condition>@vocabulary = '8'</condition>
+      <validation-rules>
         <validation-rule>
           <priority>9.130</priority>
           <severity>error</severity>
@@ -938,6 +1026,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/sector/@vocabulary</path>
+    <codelist ref="SectorVocabulary"/>
     <validation-rules>
       <validation-rule>
         <priority>9.78</priority>
@@ -950,6 +1039,8 @@
   </mapping>
   <mapping>
     <path>//iati-activity/tag/@code</path>
+    <codelist ref="UNSDG-Goals"/>
+    <condition>@vocabulary = '2'</condition>
     <validation-rules>
       <validation-rule>
         <priority>9.125</priority>
@@ -962,6 +1053,8 @@
   </mapping>
   <mapping>
     <path>//iati-activity/tag/@code</path>
+    <codelist ref="UNSDG-Targets"/>
+    <condition>@vocabulary = '3'</condition>
     <validation-rules>
       <validation-rule>
         <priority>9.126</priority>
@@ -974,6 +1067,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/tag/@vocabulary</path>
+    <codelist ref="TagVocabulary"/>
     <validation-rules>
       <validation-rule>
         <priority>9.79</priority>
@@ -986,6 +1080,8 @@
   </mapping>
   <mapping>
     <path>//iati-activity/transaction/aid-type/@code</path>
+    <codelist ref="AidType"/>
+    <condition>@vocabulary = '1' or not(@vocabulary)</condition>
     <validation-rules>
       <validation-rule>
         <priority>9.80</priority>
@@ -998,6 +1094,8 @@
   </mapping>
   <mapping>
     <path>//iati-activity/transaction/aid-type/@code</path>
+    <codelist ref="EarmarkingCategory"/>
+    <condition>@vocabulary = '2'</condition>
     <validation-rules>
       <validation-rule>
         <priority>9.129</priority>
@@ -1010,6 +1108,8 @@
   </mapping>
   <mapping>
     <path>//iati-activity/transaction/aid-type/@code</path>
+    <codelist ref="CashandVoucherModalities"/>
+    <condition>@vocabulary = '4'</condition>
     <validation-rules>
       <validation-rule>
         <priority>9.130</priority>
@@ -1022,6 +1122,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/transaction/aid-type/@vocabulary</path>
+    <codelist ref="AidTypeVocabulary"/>
     <validation-rules>
       <validation-rule>
         <priority>9.81</priority>
@@ -1034,6 +1135,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/transaction/disbursement-channel/@code</path>
+    <codelist ref="DisbursementChannel"/>
     <validation-rules>
       <validation-rule>
         <priority>9.82</priority>
@@ -1046,6 +1148,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/transaction/finance-type/@code</path>
+    <codelist ref="FinanceType"/>
     <validation-rules>
       <validation-rule>
         <priority>9.83</priority>
@@ -1058,6 +1161,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/transaction/flow-type/@code</path>
+    <codelist ref="FlowType"/>
     <validation-rules>
       <validation-rule>
         <priority>9.84</priority>
@@ -1070,6 +1174,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/transaction/recipient-country/@code</path>
+    <codelist ref="Country"/>
     <validation-rules>
       <validation-rule>
         <priority>9.85</priority>
@@ -1082,6 +1187,8 @@
   </mapping>
   <mapping>
     <path>//iati-activity/transaction/recipient-region/@code</path>
+    <codelist ref="Region"/>
+    <condition>@vocabulary = '1' or not(@vocabulary)</condition>
     <validation-rules>
       <validation-rule>
         <priority>9.86</priority>
@@ -1094,6 +1201,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/transaction/recipient-region/@vocabulary</path>
+    <codelist ref="RegionVocabulary"/>
     <validation-rules>
       <validation-rule>
         <priority>9.87</priority>
@@ -1106,6 +1214,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/transaction/provider-org/@type</path>
+    <codelist ref="OrganisationType"/>
     <validation-rules>
       <validation-rule>
         <priority>9.88</priority>
@@ -1118,6 +1227,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/transaction/receiver-org/@type</path>
+    <codelist ref="OrganisationType"/>
     <validation-rules>
       <validation-rule>
         <priority>9.89</priority>
@@ -1130,6 +1240,8 @@
   </mapping>
   <mapping>
     <path>//iati-activity/transaction/sector/@code</path>
+    <codelist ref="Sector"/>
+    <condition>@vocabulary = '1' or not(@vocabulary)</condition>
     <validation-rules>
       <validation-rule>
         <priority>9.90</priority>
@@ -1142,6 +1254,8 @@
   </mapping>
   <mapping>
     <path>//iati-activity/transaction/sector/@code</path>
+    <codelist ref="SectorCategory"/>
+    <condition>@vocabulary = '2'</condition>
     <validation-rules>
       <validation-rule>
         <priority>9.124</priority>
@@ -1154,6 +1268,8 @@
   </mapping>
   <mapping>
     <path>//iati-activity/transaction/sector/@code</path>
+    <codelist ref="UNSDG-Goals" />
+    <condition>@vocabulary = '7'</condition>
     <validation-rules>
       <validation-rule>
         <priority>9.131</priority>
@@ -1166,7 +1282,9 @@
   </mapping>
   <mapping>
       <path>//iati-activity/transaction/sector/@code</path>
-          <validation-rules>
+      <codelist ref="UNSDG-Targets" />
+      <condition>@vocabulary = '8'</condition>
+      <validation-rules>
         <validation-rule>
           <priority>9.132</priority>
           <severity>error</severity>
@@ -1178,6 +1296,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/transaction/sector/@vocabulary</path>
+    <codelist ref="SectorVocabulary"/>
     <validation-rules>
       <validation-rule>
         <priority>9.91</priority>
@@ -1190,6 +1309,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/transaction/tied-status/@code</path>
+    <codelist ref="TiedStatus"/>
     <validation-rules>
       <validation-rule>
         <priority>9.92</priority>
@@ -1202,6 +1322,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/transaction/transaction-type/@code</path>
+    <codelist ref="TransactionType"/>
     <validation-rules>
       <validation-rule>
         <priority>9.93</priority>
@@ -1214,6 +1335,7 @@
   </mapping>
   <mapping>
     <path>//iati-activity/transaction/value/@currency</path>
+    <codelist ref="Currency"/>
     <validation-rules>
       <validation-rule>
         <priority>9.94</priority>
@@ -1226,6 +1348,7 @@
   </mapping>
   <mapping>
     <path>//@xml:lang</path>
+    <codelist ref="Language"/>
     <validation-rules>
       <validation-rule>
         <priority>9.95</priority>
@@ -1238,6 +1361,7 @@
   </mapping>
   <mapping>
     <path>//iati-organisation/@default-currency</path>
+    <codelist ref="Currency"/>
     <validation-rules>
       <validation-rule>
         <priority>9.96</priority>
@@ -1250,6 +1374,7 @@
   </mapping>
   <mapping>
     <path>//iati-organisations/@version</path>
+    <codelist ref="Version"/>
     <validation-rules>
       <validation-rule>
         <priority>9.97</priority>
@@ -1262,6 +1387,7 @@
   </mapping>
   <mapping>
     <path>//iati-organisation/document-link/@format</path>
+    <codelist ref="FileFormat"/>
     <validation-rules>
       <validation-rule>
         <priority>9.98</priority>
@@ -1274,6 +1400,7 @@
   </mapping>
   <mapping>
     <path>//iati-organisation/document-link/category/@code</path>
+    <codelist ref="DocumentCategory"/>
     <validation-rules>
       <validation-rule>
         <priority>9.99</priority>
@@ -1286,6 +1413,7 @@
   </mapping>
   <mapping>
     <path>//iati-organisation/document-link/language/@code</path>
+    <codelist ref="Language"/>
     <validation-rules>
       <validation-rule>
         <priority>9.100</priority>
@@ -1298,6 +1426,7 @@
   </mapping>
   <mapping>
     <path>//iati-organisation/document-link/recipient-country/@code</path>
+    <codelist ref="Country"/>
     <validation-rules>
       <validation-rule>
         <priority>9.101</priority>
@@ -1310,6 +1439,7 @@
   </mapping>
   <mapping>
     <path>//iati-organisation/recipient-country-budget/@status</path>
+    <codelist ref="BudgetStatus"/>
     <validation-rules>
       <validation-rule>
         <priority>9.102</priority>
@@ -1322,6 +1452,7 @@
   </mapping>
   <mapping>
     <path>//iati-organisation/recipient-country-budget/recipient-country/@code</path>
+    <codelist ref="Country"/>
     <validation-rules>
       <validation-rule>
         <priority>9.103</priority>
@@ -1334,6 +1465,7 @@
   </mapping>
   <mapping>
     <path>//iati-organisation/recipient-country-budget/budget-line/value/@currency</path>
+    <codelist ref="Currency"/>
     <validation-rules>
       <validation-rule>
         <priority>9.122</priority>
@@ -1346,6 +1478,7 @@
   </mapping>
   <mapping>
     <path>//iati-organisation/recipient-country-budget/value/@currency</path>
+    <codelist ref="Currency"/>
     <validation-rules>
       <validation-rule>
         <priority>9.104</priority>
@@ -1358,6 +1491,7 @@
   </mapping>
   <mapping>
     <path>//iati-organisation/recipient-org-budget/@status</path>
+    <codelist ref="BudgetStatus"/>
     <validation-rules>
       <validation-rule>
         <priority>9.105</priority>
@@ -1370,6 +1504,7 @@
   </mapping>
   <mapping>
     <path>//iati-organisation/recipient-org-budget/value/@currency</path>
+    <codelist ref="Currency"/>
     <validation-rules>
       <validation-rule>
         <priority>9.106</priority>
@@ -1382,6 +1517,7 @@
   </mapping>
   <mapping>
     <path>//iati-organisation/recipient-org-budget/budget-line/value/@currency</path>
+    <codelist ref="Currency"/>
     <validation-rules>
       <validation-rule>
         <priority>9.123</priority>
@@ -1394,6 +1530,7 @@
   </mapping>
   <mapping>
     <path>//iati-organisation/recipient-region-budget/@status</path>
+    <codelist ref="BudgetStatus"/>
     <validation-rules>
       <validation-rule>
         <priority>9.107</priority>
@@ -1406,6 +1543,8 @@
   </mapping>
   <mapping>
     <path>//iati-organisation/recipient-region-budget/recipient-region/@code</path>
+    <codelist ref="Region"/>
+    <condition>@vocabulary = '1' or not(@vocabulary)</condition>
     <validation-rules>
       <validation-rule>
         <priority>9.108</priority>
@@ -1418,6 +1557,7 @@
   </mapping>
   <mapping>
     <path>//iati-organisation/recipient-region-budget/recipient-region/@vocabulary</path>
+    <codelist ref="RegionVocabulary"/>
     <validation-rules>
       <validation-rule>
         <priority>9.109</priority>
@@ -1430,6 +1570,7 @@
   </mapping>
   <mapping>
     <path>//iati-organisation/recipient-region-budget/budget-line/value/@currency</path>
+    <codelist ref="Currency"/>
     <validation-rules>
       <validation-rule>
         <priority>9.110</priority>
@@ -1442,6 +1583,7 @@
   </mapping>
   <mapping>
     <path>//iati-organisation/recipient-region-budget/value/@currency</path>
+    <codelist ref="Currency"/>
     <validation-rules>
       <validation-rule>
         <priority>9.111</priority>
@@ -1454,6 +1596,7 @@
   </mapping>
   <mapping>
     <path>//iati-organisation/reporting-org/@type</path>
+    <codelist ref="OrganisationType"/>
     <validation-rules>
       <validation-rule>
         <priority>9.112</priority>
@@ -1466,6 +1609,7 @@
   </mapping>
   <mapping>
     <path>//iati-organisation/total-budget/@status</path>
+    <codelist ref="BudgetStatus"/>
     <validation-rules>
       <validation-rule>
         <priority>9.113</priority>
@@ -1478,6 +1622,7 @@
   </mapping>
   <mapping>
     <path>//iati-organisation/total-budget/value/@currency</path>
+    <codelist ref="Currency"/>
     <validation-rules>
       <validation-rule>
         <priority>9.114</priority>
