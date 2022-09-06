@@ -5,7 +5,7 @@ from lxml import etree as ET
 def find_equivalent_mapping_element(mapping, rule_mappings):
     path = mapping.find('path').text
     for rule_mapping in rule_mappings.getroot().xpath('//mapping'):
-        rule_map_path = mapping.find('path').text
+        rule_map_path = rule_mapping.find('path').text
         if rule_map_path == path:
             return rule_mapping
 
