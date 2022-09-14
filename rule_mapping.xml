@@ -8,7 +8,7 @@
           <severity>error</severity>
           <category>iati</category>
           <id>9.1.1</id>
-          <message>The IATI version of the dataset is not a valid version number</message>
+          <message>The IATI version of the dataset is not a valid version number.</message>
         </validation-rule>
       </validation-rules>
     </mapping>
