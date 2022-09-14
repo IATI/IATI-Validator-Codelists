@@ -14,7 +14,7 @@ on:
       - "**/README.rst"
       - "**/dependabot.yml"
     branches: [version-2.01]
-  repository_dispatch:
+  workflow_dispatch:
 
 concurrency: CI-2.01
 
