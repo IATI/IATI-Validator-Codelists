@@ -15,6 +15,13 @@ on:
       - "**/dependabot.yml"
     branches: [version-2.01]
   workflow_dispatch:
+    inputs:
+      repo:
+        required: true
+        description: 'Triggering Repo'
+      sha:
+        required: true
+        description: 'Triggering SHA'
 
 concurrency: CI-2.01
 
@@ -22,9 +29,8 @@ jobs:
   build-commit:
     runs-on: ubuntu-latest
     env:
-      RESOURCE_NAME: ${{ github.event.client_payload.resourceName }}
-      TRIGGER_REPO: ${{ github.event.client_payload.repo }}
-      TRIGGER_SHA: ${{ github.event.client_payload.SHA }}
+      TRIGGER_REPO: ${{ inputs.repo }}
+      TRIGGER_SHA: ${{ inputs.SHA }}
 
     steps:
       - uses: actions/checkout@v3
