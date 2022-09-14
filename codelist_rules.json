@@ -16,7 +16,7 @@
       "severity": "error",
       "category": "iati",
       "id": "9.1.1",
-      "message": "The IATI version of the dataset is not a valid version number"
+      "message": "The IATI version of the dataset is not a valid version number."
     }
   },
   "/iati-activities/iati-activity": {
