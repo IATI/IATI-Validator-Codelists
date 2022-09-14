@@ -1,0 +1,55 @@
+name: PR-CI
+
+env:
+  VERSION: 2.02
+
+on:
+  pull_request:
+    paths-ignore:
+      - "**/README.rst"
+      - "**/dependabot.yml"
+    branches: [version-2.02]
+
+concurrency: CI-2.02
+
+jobs:
+  build-diff:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: recursive
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get -y install libxml2-dev libxslt-dev libxslt1-dev python3-dev python3-lxml libxml2-utils
+          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install -r requirements.txt
+
+      - name: Build
+        run: |
+          ./gen.sh
+
+      - name: Diff codelist_rules.json
+        # Should exit 1 (fail) if there is a difference - prevents dependabot automation from changing it live
+        # If you're trying to merge a PR manually, make sure you commit the changes to codelist_rules.json
+        run: |
+          git diff --quiet codelist_rules.json 
+
+  automerge:
+    needs: build-diff
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: write
+    steps:
+      - uses: fastify/github-action-merge-dependabot@v3.3
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          

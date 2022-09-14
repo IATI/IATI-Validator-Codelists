@@ -1,7 +1,7 @@
 # This workflow will install Python dependencies, run tests and lint with a variety of Python versions
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
-name: CI
+name: push-CI
 
 env:
   DEV_DEFAULT_KEY: ${{ secrets.DEV_CACHER_DEFAULT_KEY }} # Azure Functions default API Key for Redis-cacher
@@ -14,18 +14,23 @@ on:
       - "**/README.rst"
       - "**/dependabot.yml"
     branches: [version-2.02]
-  pull_request:
-    paths-ignore:
-      - "**/README.rst"
-      - "**/dependabot.yml"
-    branches: [version-2.02]
-  repository_dispatch:
+  workflow_dispatch:
+    inputs:
+      repo:
+        required: true
+        description: 'Triggering Repo'
+      sha:
+        required: true
+        description: 'Triggering SHA'
 
 concurrency: CI-2.02
 
 jobs:
-  build:
+  build-commit:
     runs-on: ubuntu-latest
+    env:
+      TRIGGER_REPO: ${{ inputs.repo }}
+      TRIGGER_SHA: ${{ inputs.SHA }}
 
     steps:
       - uses: actions/checkout@v3
@@ -48,10 +53,30 @@ jobs:
         run: |
           ./gen.sh
 
+      - name: 'Setup git config'
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+
+      - name: 'Commit changes'
+        run: |
+          RESP=$(git add codelist_rules.json -v)
+          if [[ $RESP == "" ]]; then
+            echo "No changes to commit"
+            exit 0
+          else
+            if [[ $TRIGGER_REPO == "" ]]; then
+              TRIGGERED_BY="${{ github.actor }} on push"
+            else
+              TRIGGERED_BY=$($TRIGGER_REPO $TRIGGER_SHA)
+            fi
+            git commit -m "codelist_rules.json updated by GitHub Actions triggered by $TRIGGERED_BY"
+            git push origin version-2.02
+          fi
+
   cache-codelist-rules-dev:
-    needs: build
+    needs: build-commit
     runs-on: ubuntu-latest
-    if: github.event.action == 'update-202'
     env:
       TRIGGER_REPO: ${{ github.event.client_payload.repo }}
       TRIGGER_SHA: ${{ github.event.client_payload.SHA }}
@@ -70,7 +95,7 @@ jobs:
           FILE_COMMIT_SHA=$(git log -1 --format='%H' -- './codelist_rules.json')
           echo $FILE_COMMIT_SHA
           HTTP_CODE=$(curl --write-out "%{http_code}\n" \
-          --location --request POST 'https://func-iati-redis-cacher-dev.azurewebsites.net/api/pvt/cache?key=codelistRules'$VERSION'&commitsha='$FILE_COMMIT_SHA \
+          --location --request POST 'https://func-iati-redis-cacher-dev.azurewebsites.net/api/pvt/cache?key=testcodelistRules'$VERSION'&commitsha='$FILE_COMMIT_SHA \
           --header 'x-functions-key: '$DEV_DEFAULT_KEY \
           --header 'Content-Type: application/json' \
           --data-binary '@./codelist_rules.json' \
@@ -86,7 +111,6 @@ jobs:
   cache-codelist-rules-PROD:
     needs: cache-codelist-rules-dev
     runs-on: ubuntu-latest
-    if: github.event.action == 'update-202'
     steps:
       - uses: actions/checkout@v2
         with:
@@ -98,7 +122,7 @@ jobs:
           FILE_COMMIT_SHA=$(git log -1 --format='%H' -- './codelist_rules.json')
           echo $FILE_COMMIT_SHA
           HTTP_CODE=$(curl --write-out "%{http_code}\n" \
-          --location --request POST 'https://func-iati-redis-cacher-prod.azurewebsites.net/api/pvt/cache?key=codelistRules'$VERSION'&commitsha='$FILE_COMMIT_SHA \
+          --location --request POST 'https://func-iati-redis-cacher-prod.azurewebsites.net/api/pvt/cache?key=testcodelistRules'$VERSION'&commitsha='$FILE_COMMIT_SHA \
           --header 'x-functions-key: '$PROD_DEFAULT_KEY \
           --header 'Content-Type: application/json' \
           --data-binary '@./codelist_rules.json' \
@@ -110,14 +134,3 @@ jobs:
             cat curl_out.txt
             exit 1
           fi
-
-  automerge:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
-      contents: write
-    steps:
-      - uses: fastify/github-action-merge-dependabot@v3.3
-        with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
