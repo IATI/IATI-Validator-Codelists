@@ -82,3 +82,10 @@ This tool supports Python 3.x. To use this script, we recommend the use of a vir
     python3 -m venv pyenv
     source pyenv/bin/activate
     pip install -r requirements.txt
+
+Automated Downstream Updates
+============================
+
+The GitHub workflow ``.github/workflows/push-CI.yml``, triggers a workflow in a repository related to the IATI Validator that utilises the `rule_mapping.xml` file. 
+
+- `IATI/validator-rule-tracker <https://github.com/IATI/validator-rule-tracker>`__
