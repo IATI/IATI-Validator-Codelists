@@ -77,7 +77,6 @@ jobs:
   update-rule-tracker:
     needs: build-commit
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'push' && github.actor != 'dependabot[bot]' }} # only push to the rule tracker on PUSH
     steps:
       - name: 'Trigger update of rule tracker repo .csv'
         run: |
