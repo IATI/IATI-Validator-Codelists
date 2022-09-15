@@ -75,7 +75,7 @@ jobs:
           fi
 
   update-validator-codelists:
-    needs: build
+    needs: build-commit
     runs-on: ubuntu-latest
     steps:
       - name: 'Trigger update of Validator Codelists repository'
