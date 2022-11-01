@@ -68,7 +68,7 @@ jobs:
             if [[ $TRIGGER_REPO == "" ]]; then
               TRIGGERED_BY="${{ github.actor }} on push"
             else
-              TRIGGERED_BY=$($TRIGGER_REPO $TRIGGER_SHA)
+              TRIGGERED_BY=$TRIGGER_REPO' '$TRIGGER_SHA
             fi
             git commit -m "codelist_rules.json updated by GitHub Actions triggered by $TRIGGERED_BY"
             git push origin version-2.03
@@ -105,7 +105,7 @@ jobs:
         run: |
           echo "Event '${{ github.event.action }}' for $RESOURCE_NAME received from $TRIGGER_REPO and commit sha $TRIGGER_SHA"
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           # Number of commits to fetch. 0 indicates all history for all branches and tags.
           fetch-depth: 0
@@ -132,7 +132,7 @@ jobs:
     needs: cache-codelist-rules-dev
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           # Number of commits to fetch. 0 indicates all history for all branches and tags.
           fetch-depth: 0
