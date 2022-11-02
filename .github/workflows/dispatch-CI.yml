@@ -17,7 +17,7 @@ jobs:
   call-build-pr:
     uses: IATI/.github/.github/workflows/codelist_rules_build_pr.yaml@main
     with:
-      VERSION: ${{ env.VERSION }}
+      VERSION: $VERSION
       TRIGGER_REPO: ${{ inputs.TRIGGER_REPO }}
       TRIGGER_SHA: ${{ inputs.TRIGGER_SHA }}
     secrets:
