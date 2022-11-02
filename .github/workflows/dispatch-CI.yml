@@ -1,8 +1,5 @@
 name: dispatch-CI-2.02
 
-env:
-  VERSION: 2.02
-
 on:
   workflow_dispatch:
     inputs:
@@ -17,8 +14,8 @@ jobs:
   call-build-pr:
     uses: IATI/.github/.github/workflows/codelist_rules_build_pr.yaml@main
     with:
-      VERSION: $VERSION
-      TRIGGER_REPO: ${{ inputs.TRIGGER_REPO }}
-      TRIGGER_SHA: ${{ inputs.TRIGGER_SHA }}
+      VERSION: '2.02'
+      TRIGGER_REPO: ${{ inputs.repo }}
+      TRIGGER_SHA: ${{ inputs.sha }}
     secrets:
       IATI_BOT_PAT: ${{ secrets.IATI_BOT_PAT }}
