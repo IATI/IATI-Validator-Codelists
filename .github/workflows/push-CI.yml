@@ -18,24 +18,12 @@ on:
 concurrency: CI-2.02
 
 jobs:
-  update-rule-tracker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: 'Trigger update of rule tracker repo .csv'
-        run: |
-          HTTP_CODE=$(curl --write-out "%{http_code}\n" \
-          -H 'Accept: application/vnd.github.everest-preview+json' \
-          -H 'Authorization: Bearer ${{ secrets.IATI_BOT_PAT }}' \
-          -X POST https://api.github.com/repos/IATI/validator-rule-tracker/dispatches \
-          --data '{"event_type": "update", "client_payload": { "resourceName": "codelists", "repo": "'"$GITHUB_REPOSITORY"'", "sha": "'"$GITHUB_SHA"'"}}' \
-          --output curl_out.txt \
-          --silent )
-          echo $HTTP_CODE
-          if [[ $HTTP_CODE != '204' ]] ; then
-            echo "Reponse is not 204, check error logs"
-            cat curl_out.txt
-            exit 1
-          fi
+  call-update-rule-tracker:
+    uses: IATI/.github/.github/workflows/trigger_rule_tracker_update.yaml@main
+    with:
+      RESOURCE_NAME: codelists
+    secrets:
+      IATI_BOT_PAT: ${{ secrets.IATI_BOT_PAT }}
 
   cache-codelist-rules-dev:
     runs-on: ubuntu-latest
