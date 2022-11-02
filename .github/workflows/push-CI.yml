@@ -4,9 +4,8 @@
 name: push-CI-2.02
 
 env:
-  DEV_DEFAULT_KEY: ${{ secrets.DEV_CACHER_DEFAULT_KEY }} # Azure Functions default API Key for Redis-cacher
-  PROD_DEFAULT_KEY: ${{ secrets.PROD_CACHER_DEFAULT_KEY }} # Azure Functions default API Key for Redis-cacher
   VERSION: 2.02
+  PROD_DEFAULT_KEY: ${{ secrets.PROD_CACHER_DEFAULT_KEY }} # Azure Functions default API Key for Redis-cacher
 
 on:
   push:
@@ -32,7 +31,7 @@ jobs:
       filepath: './codelist_rules.json'
       rediskey: codelistRules${{ env.VERSION }}
     secrets:
-      DEFAULT_KEY: ${{ env.DEV_DEFAULT_KEY }}
+      DEFAULT_KEY: ${{ secrets.DEV_DEFAULT_KEY }} # Azure Functions default API Key for Redis-cacher
 
   cache-codelist-rules-PROD:
     needs: call-cache-codelist-rules-dev
