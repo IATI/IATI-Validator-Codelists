@@ -1,5 +1,5 @@
 IATI Validator Codelists
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 Introduction
 ------------
@@ -12,7 +12,7 @@ The Codelists
 The source codelists can be found in the `IATI-Codelists/xml/` directory. 
 
 Codelist Mapping Output
-================
+=======================
 
 `mapping.xml <https://github.com/IATI/IATI-Codelists/blob/version-2.03/mapping.xml>`__ relates codelists to an XML path in the standard. This should make it easier for users to work out which codelists go with which element and vice versa.
 
@@ -68,11 +68,39 @@ Note running ``mappings_to_codelist_rules.py`` alone will not work as you need t
 GitHub Actions workflows
 =========================
 
-``.github/workflows/main.yml`` does a few things when new code is pushed to  version-2.0X branches. 
+``.github/workflows/dispatch-CI.yaml``
 
-* Runs xmllint and flake8 linting on the codelists in ``xml/``
-* Pushes ``codelist_rules.json`` to the Redis cache used by the IATI Validator
-* Triggers a workflow to update the .csv Validator rules in `Validator Rule Tracker <https://github.com/IATI/validator-rule-tracker>`__
+Trigger: 
+
+* GitHub Dispatch API Call from `IATI-Codelists <https://github.com/IATI/IATI-Codelists>`__ or `IATI-Codelists-NonEmbedded <https://github.com/IATI/IATI-Codelists-NonEmbedded>`__
+
+Actions:
+
+* Sets up the python environment, builds `codelist_rules.json`
+* If there are changes, creates a PR for manual review and merging to prevent auto-updates to the validator codelists breaking it.
+
+
+``.github/workflows/PR-CI.yaml``
+
+Trigger: 
+
+* Pull Request
+
+Actions:
+
+* Sets up the python environment, builds `codelist_rules.json`
+* Diffs with existing `codelist_rules.json`, if there are differences it fails. 
+
+Why: If you are making updates to `codelist_rules.json` you must include them in a PR
+
+``.github/workflows/push-CI.yaml``
+
+Trigger: 
+* Push to the branch (e.g. when PR merged)
+
+Actions:
+* Triggers a workflow to update the .csv Validator rules in `Validator Rule Tracker <https://github.com/IATI/validator-rule-tracker>`__ which utilises the `rule_mapping.xml` file. 
+* Pushes ``codelist_rules.json`` to the Redis caches used by the IATI Validator
 
 Information for developers
 ==========================
@@ -82,10 +110,3 @@ This tool supports Python 3.x. To use this script, we recommend the use of a vir
     python3 -m venv pyenv
     source pyenv/bin/activate
     pip install -r requirements.txt
-
-Automated Downstream Updates
-============================
-
-The GitHub workflow ``.github/workflows/push-CI.yml``, triggers a workflow in a repository related to the IATI Validator that utilises the `rule_mapping.xml` file. 
-
-- `IATI/validator-rule-tracker <https://github.com/IATI/validator-rule-tracker>`__
