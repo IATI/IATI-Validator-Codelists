@@ -45,20 +45,17 @@ jobs:
 
       - name: 'Commit changes'
         run: |
-          git checkout -b update/${{ env.VERSION }}/$TRIGGER_SHA
+          BRANCH="update/${{ env.VERSION }}/$TRIGGER_SHA"
+          git checkout -b "$BRANCH"
           RESP=$(git add codelist_rules.json -v)
           if [[ $RESP == "" ]]; then
             echo "No changes to commit"
             exit 0
-          else
-            if [[ $TRIGGER_REPO == "" ]]; then
-              TRIGGERED_BY="${{ github.actor }} on push"
-            else
-              TRIGGERED_BY=$TRIGGER_REPO' '$TRIGGER_SHA
-            fi
-            MESSAGE='codelist_rules.json updated by GitHub Actions triggered by '$TRIGGERED_BY
-            git commit -m "$MESSAGE"
           fi
+          TRIGGERED_BY=$TRIGGER_REPO' '$TRIGGER_SHA
+          MESSAGE='codelist_rules.json updated by GitHub Actions triggered by '$TRIGGERED_BY
+          git commit -m "$MESSAGE"
+          git push origin "$BRANCH"
           gh pr create --base=version-2.02 \
           --title "codelist_rules.json update ${{ env.VERSION }}" \
           --body "$MESSAGE"
