@@ -29,7 +29,7 @@ jobs:
     with:
       environment: dev
       filepath: './codelist_rules.json'
-      rediskey: codelistRules${{ env.VERSION }}
+      rediskey: codelistRules2.02
     secrets:
       DEFAULT_KEY: ${{ secrets.DEV_DEFAULT_KEY }} # Azure Functions default API Key for Redis-cacher
 
