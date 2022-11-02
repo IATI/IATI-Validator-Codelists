@@ -1,12 +1,4 @@
-# This workflow will install Python dependencies, run tests and lint with a variety of Python versions
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
-
 name: push-CI-2.03
-
-env:
-  DEV_DEFAULT_KEY: ${{ secrets.DEV_CACHER_DEFAULT_KEY }} # Azure Functions default API Key for Redis-cacher
-  PROD_DEFAULT_KEY: ${{ secrets.PROD_CACHER_DEFAULT_KEY }} # Azure Functions default API Key for Redis-cacher
-  VERSION: 2.03
 
 on:
   push:
@@ -18,81 +10,28 @@ on:
 concurrency: CI-2.03
 
 jobs:
-  update-rule-tracker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: 'Trigger update of rule tracker repo .csv'
-        run: |
-          HTTP_CODE=$(curl --write-out "%{http_code}\n" \
-          -H 'Accept: application/vnd.github.everest-preview+json' \
-          -H 'Authorization: Bearer ${{ secrets.IATI_BOT_PAT }}' \
-          -X POST https://api.github.com/repos/IATI/validator-rule-tracker/dispatches \
-          --data '{"event_type": "update", "client_payload": { "resourceName": "codelists", "repo": "'"$GITHUB_REPOSITORY"'", "sha": "'"$GITHUB_SHA"'"}}' \
-          --output curl_out.txt \
-          --silent )
-          echo $HTTP_CODE
-          if [[ $HTTP_CODE != '204' ]] ; then
-            echo "Reponse is not 204, check error logs"
-            cat curl_out.txt
-            exit 1
-          fi
+  call-update-rule-tracker:
+    uses: IATI/.github/.github/workflows/trigger_rule_tracker_update.yaml@main
+    with:
+      RESOURCE_NAME: codelists
+    secrets:
+      IATI_BOT_PAT: ${{ secrets.IATI_BOT_PAT }}
 
-  cache-codelist-rules-dev:
-    runs-on: ubuntu-latest
-    env:
-      TRIGGER_REPO: ${{ github.event.client_payload.repo }}
-      TRIGGER_SHA: ${{ github.event.client_payload.SHA }}
-    steps:
-      - name: 'Event Information'
-        run: |
-          echo "Event '${{ github.event.action }}' for $RESOURCE_NAME received from $TRIGGER_REPO and commit sha $TRIGGER_SHA"
+  call-cache-codelist-rules-dev:
+    uses: IATI/.github/.github/workflows/cache_redis.yaml@main
+    with:
+      environment: dev
+      filepath: './codelist_rules.json'
+      rediskey: codelistRules2.03
+    secrets:
+      DEFAULT_KEY: ${{ secrets.DEV_CACHER_DEFAULT_KEY }} # Azure Functions default API Key for Redis-cacher
 
-      - uses: actions/checkout@v3
-        with:
-          # Number of commits to fetch. 0 indicates all history for all branches and tags.
-          fetch-depth: 0
-
-      - name: POST codelist_rules.json to func-iati-redis-cacher-dev
-        run: | 
-          FILE_COMMIT_SHA=$(git log -1 --format='%H' -- './codelist_rules.json')
-          echo $FILE_COMMIT_SHA
-          HTTP_CODE=$(curl --write-out "%{http_code}\n" \
-          --location --request POST 'https://func-iati-redis-cacher-dev.azurewebsites.net/api/pvt/cache?key=codelistRules'$VERSION'&commitsha='$FILE_COMMIT_SHA \
-          --header 'x-functions-key: '$DEV_DEFAULT_KEY \
-          --header 'Content-Type: application/json' \
-          --data-binary '@./codelist_rules.json' \
-          --output curl_out.txt \
-          --silent )
-          echo $HTTP_CODE
-          if [[ $HTTP_CODE != '200' ]] ; then
-            echo "Reponse is not 200 from func-iati-redis-cacher-dev, check error logs"
-            cat curl_out.txt
-            exit 1
-          fi
-
-  cache-codelist-rules-PROD:
-    needs: cache-codelist-rules-dev
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          # Number of commits to fetch. 0 indicates all history for all branches and tags.
-          fetch-depth: 0
-
-      - name: POST codelist_rules.json to func-iati-redis-cacher-PROD
-        run: | 
-          FILE_COMMIT_SHA=$(git log -1 --format='%H' -- './codelist_rules.json')
-          echo $FILE_COMMIT_SHA
-          HTTP_CODE=$(curl --write-out "%{http_code}\n" \
-          --location --request POST 'https://func-iati-redis-cacher-prod.azurewebsites.net/api/pvt/cache?key=codelistRules'$VERSION'&commitsha='$FILE_COMMIT_SHA \
-          --header 'x-functions-key: '$PROD_DEFAULT_KEY \
-          --header 'Content-Type: application/json' \
-          --data-binary '@./codelist_rules.json' \
-          --output curl_out.txt \
-          --silent )
-          echo $HTTP_CODE
-          if [[ $HTTP_CODE != '200' ]] ; then
-            echo "Reponse is not 200 from func-iati-redis-cacher-PROD, check error logs"
-            cat curl_out.txt
-            exit 1
-          fi
+  call-cache-codelist-rules-PROD:
+    needs: call-cache-codelist-rules-dev
+    uses: IATI/.github/.github/workflows/cache_redis.yaml@main
+    with:
+      environment: prod
+      filepath: './codelist_rules.json'
+      rediskey: codelistRules2.03
+    secrets:
+      DEFAULT_KEY: ${{ secrets.PROD_CACHER_DEFAULT_KEY }} # Azure Functions default API Key for Redis-cacher

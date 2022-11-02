@@ -1,8 +1,5 @@
 name: dispatch-CI-2.03
 
-env:
-  VERSION: 2.03
-
 on:
   workflow_dispatch:
     inputs:
@@ -14,49 +11,11 @@ on:
         description: 'Triggering SHA'
 
 jobs:
-  build-pr:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: version-2.03
-          submodules: recursive
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.9'
-          cache: 'pip'
-
-      - name: Install dependencies
-        run: |
-          sudo apt-get -y install libxml2-dev libxslt-dev libxslt1-dev python3-dev python3-lxml libxml2-utils
-          python -m pip install --upgrade pip setuptools wheel
-          python -m pip install -r requirements.txt
-
-      - name: Build
-        run: |
-          ./gen.sh
-
-      - name: 'Setup git config'
-        run: |
-          git config user.name "GitHub Actions Bot"
-          git config user.email "<>"
-
-      - name: 'Commit changes'
-        run: |
-          RESP=$(git add codelist_rules.json -v)
-          if [[ $RESP == "" ]]; then
-            echo "No changes to commit"
-            exit 0
-          else
-            if [[ $TRIGGER_REPO == "" ]]; then
-              TRIGGERED_BY="${{ github.actor }} on push"
-            else
-              TRIGGERED_BY=$TRIGGER_REPO' '$TRIGGER_SHA
-            fi
-            git commit -m "codelist_rules.json updated by GitHub Actions triggered by $TRIGGERED_BY"
-          fi
-          gh pr create --base=version-${{ env.VERSION }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.IATI_BOT_PAT }}
+  call-build-pr:
+    uses: IATI/.github/.github/workflows/codelist_rules_build_pr.yaml@main
+    with:
+      VERSION: '2.03'
+      TRIGGER_REPO: ${{ inputs.repo }}
+      TRIGGER_SHA: ${{ inputs.sha }}
+    secrets:
+      IATI_BOT_PAT: ${{ secrets.IATI_BOT_PAT }}
