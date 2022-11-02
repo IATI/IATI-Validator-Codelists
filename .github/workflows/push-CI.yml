@@ -1,11 +1,4 @@
-# This workflow will install Python dependencies, run tests and lint with a variety of Python versions
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
-
 name: push-CI-2.02
-
-env:
-  VERSION: 2.02
-  PROD_DEFAULT_KEY: ${{ secrets.PROD_CACHER_DEFAULT_KEY }} # Azure Functions default API Key for Redis-cacher
 
 on:
   push:
@@ -33,29 +26,12 @@ jobs:
     secrets:
       DEFAULT_KEY: ${{ secrets.DEV_CACHER_DEFAULT_KEY }} # Azure Functions default API Key for Redis-cacher
 
-  cache-codelist-rules-PROD:
+  call-cache-codelist-rules-PROD:
     needs: call-cache-codelist-rules-dev
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          # Number of commits to fetch. 0 indicates all history for all branches and tags.
-          fetch-depth: 0
-
-      - name: POST codelist_rules.json to func-iati-redis-cacher-PROD
-        run: | 
-          FILE_COMMIT_SHA=$(git log -1 --format='%H' -- './codelist_rules.json')
-          echo $FILE_COMMIT_SHA
-          HTTP_CODE=$(curl --write-out "%{http_code}\n" \
-          --location --request POST 'https://func-iati-redis-cacher-prod.azurewebsites.net/api/pvt/cache?key=codelistRules'$VERSION'&commitsha='$FILE_COMMIT_SHA \
-          --header 'x-functions-key: '$PROD_DEFAULT_KEY \
-          --header 'Content-Type: application/json' \
-          --data-binary '@./codelist_rules.json' \
-          --output curl_out.txt \
-          --silent )
-          echo $HTTP_CODE
-          if [[ $HTTP_CODE != '200' ]] ; then
-            echo "Reponse is not 200 from func-iati-redis-cacher-PROD, check error logs"
-            cat curl_out.txt
-            exit 1
-          fi
+    uses: IATI/.github/.github/workflows/cache_redis.yaml@main
+    with:
+      environment: prod
+      filepath: './codelist_rules.json'
+      rediskey: codelistRules2.02
+    secrets:
+      DEFAULT_KEY: ${{ secrets.PROD_CACHER_DEFAULT_KEY }} # Azure Functions default API Key for Redis-cacher
