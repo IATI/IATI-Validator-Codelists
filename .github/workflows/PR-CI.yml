@@ -14,7 +14,7 @@ jobs:
     uses: IATI/.github/.github/workflows/codelist_rules_build_diff.yaml@main
 
   automerge:
-    needs: build-diff
+    needs: call-build-diff
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
