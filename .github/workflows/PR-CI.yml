@@ -10,37 +10,11 @@ on:
 concurrency: CI-2.02
 
 jobs:
-  build-diff:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          submodules: recursive
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.9'
-          cache: 'pip'
-
-      - name: Install dependencies
-        run: |
-          sudo apt-get -y install libxml2-dev libxslt-dev libxslt1-dev python3-dev python3-lxml libxml2-utils
-          python -m pip install --upgrade pip setuptools wheel
-          python -m pip install -r requirements.txt
-
-      - name: Build
-        run: |
-          ./gen.sh
-
-      - name: Diff codelist_rules.json
-        # Should exit 1 (fail) if there is a difference - prevents dependabot automation from changing it live
-        # If you're trying to merge a PR manually, make sure you commit the changes to codelist_rules.json
-        run: |
-          git diff --quiet codelist_rules.json 
+  call-build-diff:
+    uses: IATI/.github/.github/workflows/codelist_rules_build_diff.yaml@main
 
   automerge:
-    needs: build-diff
+    needs: call-build-diff
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
