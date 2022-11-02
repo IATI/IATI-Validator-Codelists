@@ -1,0 +1,26 @@
+name: PR-CI-2.01
+
+on:
+  pull_request:
+    paths-ignore:
+      - "**/README.rst"
+      - "**/dependabot.yml"
+    branches: [version-2.01]
+
+concurrency: CI-2.01
+
+jobs:
+  call-build-diff:
+    uses: IATI/.github/.github/workflows/codelist_rules_build_diff.yaml@main
+
+  automerge:
+    needs: call-build-diff
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: write
+    steps:
+      - uses: fastify/github-action-merge-dependabot@v3.4
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          

@@ -1,0 +1,37 @@
+name: push-CI-2.01
+
+on:
+  push:
+    paths-ignore:
+      - "**/README.rst"
+      - "**/dependabot.yml"
+    branches: [version-2.01]
+
+concurrency: CI-2.01
+
+jobs:
+  call-update-rule-tracker:
+    uses: IATI/.github/.github/workflows/trigger_rule_tracker_update.yaml@main
+    with:
+      RESOURCE_NAME: codelists
+    secrets:
+      IATI_BOT_PAT: ${{ secrets.IATI_BOT_PAT }}
+
+  call-cache-codelist-rules-dev:
+    uses: IATI/.github/.github/workflows/cache_redis.yaml@main
+    with:
+      environment: dev
+      filepath: './codelist_rules.json'
+      rediskey: codelistRules2.01
+    secrets:
+      DEFAULT_KEY: ${{ secrets.DEV_CACHER_DEFAULT_KEY }} # Azure Functions default API Key for Redis-cacher
+
+  call-cache-codelist-rules-PROD:
+    needs: call-cache-codelist-rules-dev
+    uses: IATI/.github/.github/workflows/cache_redis.yaml@main
+    with:
+      environment: prod
+      filepath: './codelist_rules.json'
+      rediskey: codelistRules2.01
+    secrets:
+      DEFAULT_KEY: ${{ secrets.PROD_CACHER_DEFAULT_KEY }} # Azure Functions default API Key for Redis-cacher

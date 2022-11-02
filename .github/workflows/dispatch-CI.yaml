@@ -1,0 +1,21 @@
+name: dispatch-CI-2.01
+
+on:
+  workflow_dispatch:
+    inputs:
+      repo:
+        required: true
+        description: 'Triggering Repo'
+      sha:
+        required: true
+        description: 'Triggering SHA'
+
+jobs:
+  call-build-pr:
+    uses: IATI/.github/.github/workflows/codelist_rules_build_pr.yaml@main
+    with:
+      VERSION: '2.01'
+      TRIGGER_REPO: ${{ inputs.repo }}
+      TRIGGER_SHA: ${{ inputs.sha }}
+    secrets:
+      IATI_BOT_PAT: ${{ secrets.IATI_BOT_PAT }}
