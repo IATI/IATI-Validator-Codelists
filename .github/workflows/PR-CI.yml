@@ -1,8 +1,5 @@
 name: PR-CI-2.02
 
-env:
-  VERSION: 2.02
-
 on:
   pull_request:
     paths-ignore:
