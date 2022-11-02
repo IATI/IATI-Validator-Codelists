@@ -45,6 +45,7 @@ jobs:
 
       - name: 'Commit changes'
         run: |
+          git checkout -b update/${{ env.VERSION }}/$TRIGGER_SHA
           RESP=$(git add codelist_rules.json -v)
           if [[ $RESP == "" ]]; then
             echo "No changes to commit"
