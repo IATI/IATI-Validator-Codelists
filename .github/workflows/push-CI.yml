@@ -1,7 +1,7 @@
 # This workflow will install Python dependencies, run tests and lint with a variety of Python versions
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
-name: push-CI
+name: push-CI-2.02
 
 env:
   DEV_DEFAULT_KEY: ${{ secrets.DEV_CACHER_DEFAULT_KEY }} # Azure Functions default API Key for Redis-cacher

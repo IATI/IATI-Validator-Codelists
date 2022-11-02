@@ -1,4 +1,4 @@
-name: PR-CI
+name: PR-CI-2.02
 
 env:
   VERSION: 2.02
