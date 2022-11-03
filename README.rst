@@ -65,6 +65,15 @@ It combines information from `mapping.xml` and the different available Codelists
 
 Note running ``mappings_to_codelist_rules.py`` alone will not work as you need to pull in the NonEmbedded codelists repo, which is done in ``gen.sh``.
 
+Update Process
+==============
+
+* Can happen through either a manual update to this repo through a Pull Request, or an automated update from IATI-Codelists or IATI-Codelists-NonEmbedded
+* An automated update from IATI-Codelists or IATI-Codelists-NonEmbedded will create PRs (one per affected version) in this repo for changes and assign @IATI/devs group for review.
+* Any PRs with changes to `codelist_rules.json` should be reviewed/merged, which then pushes the codelist file to our Dev/Prod Redis cache
+* Once that occurs the Validator Azure Functions must be restarted to pickup the new `codelist_rules.json` file from the Redis cache
+* You can confirm the update works by validating a file and comparing the `"codelistCommitSha"` key in the response to the commit sha  of the `codelist_rules.json` file in the repo for the specific version 
+
 GitHub Actions workflows
 =========================
 
