@@ -6,6 +6,15 @@ Introduction
 
 This repository contains the scripts to transform the codelists for the IATI Validator.
 
+Versions
+========
+
+There is one branch per active version of the IATI Standard:
+
+- ``version-2.01``
+- ``version-2.02``
+- ``version-2.03``
+
 The Codelists
 =============
 
