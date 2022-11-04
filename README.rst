@@ -91,6 +91,7 @@ GitHub Actions workflows
 Trigger: 
 
 * GitHub Dispatch API Call from `IATI-Codelists <https://github.com/IATI/IATI-Codelists>`__ or `IATI-Codelists-NonEmbedded <https://github.com/IATI/IATI-Codelists-NonEmbedded>`__
+* Manual workflow dispatch from the GitHub Actions UI
 
 Actions:
 
