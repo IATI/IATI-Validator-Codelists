@@ -1,0 +1,4 @@
+lxml==4.9.1
+flake8==5.0.4
+pytz
+pytest==8.1.1
